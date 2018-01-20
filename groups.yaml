@@ -1,0 +1,104 @@
+default_view:
+    view: yes
+    icon: mdi:home 
+    entities:
+      - group.calendar
+      - group.multiroom
+      - group.consumption
+      - group.weather_overview
+      - group.daily_forecast
+      - group.sabnzbd
+      - sun.sun
+      - zone.home
+      - device_tracker.patricia_blackberry
+      - device_tracker.dimitri_android
+      
+salon:
+  name: Salon
+  view: yes
+  entities:
+    - sensor.temperature_salon
+    - sensor.humidite_salon
+    - sensor.batterie_salon
+    - media_player.kodi
+    - media_player.livebox_play_tv
+    - media_player.snapcast_client_684a866e41cd41bbb16cd3f1a7195e57
+chambreparentale:
+  name: Chambre Parentale
+  view: yes
+  entities:
+    - sensor.temperature_chambre_parentale
+    - sensor.humidite_chambre_parentale
+    - sensor.batterie_chambre_parentale
+chambresoline:
+  name: Chambre Soline
+  view: yes
+  entities:
+    - sensor.temperature_chambre_soline
+    - sensor.humidite_chambre_soline
+    - sensor.batterie_chambre_soline
+bureaudimitri:
+  name: Bureau Dimitri
+  view: yes
+  entities:
+    - sensor.temperature_bureau_dimitri
+    - sensor.humidite_bureau_dimitri
+    - sensor.batterie_bureau_dimitri
+    - media_player.snapcast_client_a6959a1b583340b7a8741924192b921b
+    - switch.feu_tricolore
+salledemain:
+  name: Salle de bain
+  view: yes
+  entities:
+    - sensor.temperature_salle_de_bain
+    - sensor.humidite_salle_de_bain
+multiroom:
+  name: Multiroom Sound System
+  entities:
+    - weblink.multiroom_player
+    - media_player.mpd
+    - media_player.snapcast_group_fcb1510e58d29e6103b43a6972ef711b
+sabnzbd:
+  name: sabnzbd Status
+  entities:
+    - sensor.sabnzbd_status
+    - sensor.sabnzbd_speed
+    - sensor.sabnzbd_queue_count
+    - sensor.sabnzbd_queue
+    - sensor.sabnzbd_left
+    - sensor.sabnzbd_disk_free
+    - sensor.sabnzbd_disk
+
+consumption:
+  name: Power Consumption
+  entities:
+    - sensor.linky_daily_1d_consumption
+    - sensor.linky_monthly_current_consumption
+    - sensor.linky_yearly_current_consumption
+    
+daily_forecast:
+    name: Météo Semaine
+    entities:
+      - sensor.pws_weather_1d_metric
+      - sensor.pws_weather_1n_metric
+      - sensor.pws_weather_2d_metric
+      - sensor.pws_weather_2n_metric
+      - sensor.pws_weather_3d_metric
+      - sensor.pws_weather_3n_metric
+      - sensor.pws_weather_4d_metric
+      - sensor.pws_weather_4n_metric
+      
+weather_overview:
+  name: Météo
+  entities:
+    - sensor.pws_weather_1d_metric
+    - sensor.pws_temp_high_record_c
+    - sensor.pws_temp_high_1d_c
+    - sensor.pws_temp_c
+    - sensor.pws_temp_low_1d_c
+    - sensor.pws_temp_low_record_c
+    - sensor.pws_precip_1d
+    - sensor.pws_precip_1d_mm
+    - sensor.pws_wind_kph
+    - sensor.pws_wind_1d_kph
+    - sensor.pws_alerts

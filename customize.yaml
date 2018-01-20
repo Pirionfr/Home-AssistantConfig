@@ -1,0 +1,22 @@
+sensor.alectov3_303d_bat:
+  hidden: true
+sensor.alectov3_303d_temp:
+  hidden: true
+sensor.alectov3_303d_hum:
+  hidden: true
+sensor.owl_cm180_0011_watt:
+  hidden: true
+sensor.owl_cm180_0011_kwatt:
+  hidden: true
+sensor.alectov3_305b_hum:
+  hidden: true
+sensor.alectov3_305b_temp:
+  hidden: true
+sensor.alectov3_305b_bat:
+  hidden: true
+media_player.snapcast_client_7bqdu16b30004964:
+  hidden: true
+media_player.snapcast_client_a6959a1b583340b7a8741924192b921b:
+  friendly_name: Snapcast speaker2
+media_player.kodi:
+  friendly_name: Kodi Media Center

@@ -1,0 +1,9 @@
+  - platform: kodi
+    host: 192.168.0.22
+  - platform: snapcast
+    host: 192.168.0.20
+  - platform: mpd
+    host: 192.168.0.20
+  - platform: liveboxplaytv
+    host: 192.168.0.16
+    port: 8080

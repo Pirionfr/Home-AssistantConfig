@@ -1,0 +1,154 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 70
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Paris
+  # Customization file
+  customize: !include customize.yaml
+
+recorder:
+  db_url: !secret db_url
+
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  cors_allowed_origins:
+    - https://google.com
+    - https://home-assistant.io
+  use_x_forwarded_for: True
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - 192.168.0.0/24
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+
+
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+
+# Text to speech
+tts:
+  - platform: google
+    language: 'fr'
+
+# Cloud
+cloud:
+
+
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://192.168.0.36:3218
+
+
+weblink:
+  entities:
+  - name: Multi-Room Player
+    url: http://192.168.0.20    
+    
+rflink:
+  port: /dev/ttyACM0
+
+logger:
+  default: error
+#  logs:
+#    rflink: debug
+#    homeassistant.components.rflink: debug
+
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  agent_user_id:  !secret google_assistant_agent_user_id
+  api_key:  !secret google_assistant_api_key
+  exposed_domains:
+    - switch
+    - light
+    - cover
+    - media_player
+    - group
+    - fan
+    - scene
+    - script
+    - climate
+
+calendar:
+  - platform: caldav
+    url: !secret caldav_url
+    username: !secret caldav_username
+    password: !secret caldav_password
+
+mqtt:
+  broker: 192.168.0.36
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  port: 8883
+  certificate: /etc/ssl/certs/ca-certificates.crt
+  tls_insecure: true
+
+    
+    
+device_tracker:
+  - platform: nmap_tracker
+    hosts:
+     - 192.168.0.39
+  - platform: owntracks
+
+media_player: !include mediaplayer.yaml
+light: !include light.yaml
+switch: !include switch.yaml
+sensor: !include sensor.yaml
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zone.yaml
+group: !include groups.yaml

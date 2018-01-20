@@ -1,0 +1,90 @@
+- platform: rflink
+  automatic_add: false
+  devices:
+    fineoffset_003d_bat:
+      name: Batterie chambre Soline
+      sensor_type: battery
+    fineoffset_003d_temp:
+      name: Temperature chambre Soline
+      sensor_type: temperature
+    fineoffset_003d_hum:
+      name: Humidité chambre Soline
+      sensor_type: humidity
+    fineoffset_005b_bat:
+      name: Batterie bureau Dimitri
+      sensor_type: battery
+    fineoffset_005b_temp:
+      name: Temperature bureau Dimitri
+      sensor_type: temperature
+    fineoffset_005b_hum:
+      name: Humidité bureau Dimitri
+      sensor_type: humidity
+    fineoffset_001d_bat:
+      name: batterie chambre Parentale
+      sensor_type: battery
+    fineoffset_001d_temp:
+      name: Temperature chambre Parentale
+      sensor_type: temperature
+    fineoffset_001d_hum:
+      name: Humidité chambre Parentale
+      sensor_type: humidity
+    inovalley_fc01_bat:
+      name: batterie Salon
+      sensor_type: battery
+    inovalley_fc01_temp:
+      name: Temperature Salon
+      sensor_type: temperature
+    inovalley_fc01_hum:
+      name: Humidité Salon
+      sensor_type: humidity
+    wh3_46e0_temp:
+      name: Temperature Salle de bain
+      sensor_type: temperature
+    wh3_46e0_hum:
+      name: Humidité Salle de bain
+      sensor_type: humidity
+      
+- platform: sabnzbd
+  name: sabnzbd
+  host: 192.168.0.20
+  api_key: fed54df0ddcc3b5fca0bc088a54b6e53
+  monitored_variables:
+    - 'current_status'
+    - 'speed'
+    - 'queue_size'
+    - 'queue_remaining'
+    - 'disk_size'
+    - 'disk_free'
+    - 'queue_count'
+
+
+- platform: wunderground
+  api_key: df2d8ec061d5431c
+  lang: FR
+  monitored_conditions:
+   - temp_high_record_c
+   - temp_high_1d_c
+   - temp_c
+   - temp_low_1d_c
+   - temp_low_record_c
+   - precip_1d
+   - precip_1d_mm
+   - wind_kph
+   - wind_1d_kph
+   - alerts
+   - weather_1d_metric
+   - weather_1n_metric
+   - weather_2d_metric
+   - weather_2n_metric
+   - weather_3d_metric
+   - weather_3n_metric
+   - weather_4d_metric
+   - weather_4n_metric
+
+- platform: linky
+  username: !secret linky_username
+  password: !secret linky_password
+  monitored_variables:
+    - daily_1d_consumption
+    - monthly_current_consumption
+    - yearly_current_consumption
