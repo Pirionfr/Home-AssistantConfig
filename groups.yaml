@@ -7,12 +7,18 @@ default_view:
       - group.consumption
       - group.weather_overview
       - group.daily_forecast
-      - group.sabnzbd
       - sun.sun
       - zone.home
       - device_tracker.patricia_blackberry
       - device_tracker.dimitri_android
-      
+
+network:
+  name: Reseaux
+  view: yes
+  entities:
+    - group.sabnzbd
+    - group.speedtest
+
 salon:
   name: Salon
   view: yes
@@ -80,7 +86,13 @@ sabnzbd:
     - sensor.sabnzbd_left
     - sensor.sabnzbd_disk_free
     - sensor.sabnzbd_disk
-
+    
+speedtest:
+  name: Speedtest
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
 consumption:
   name: Power Consumption
   entities:
