@@ -177,15 +177,18 @@ class LinkyData(object):
 
 	def __init__(self, username, password):
 		"""Initialize the data object."""
-		from pylinky import LinkyClient
-		self.client = LinkyClient(username, password)
+		self._username = username
+		self._password = password
+		self.client = {}
 		self.data = {}
 
 	@Throttle(MIN_TIME_BETWEEN_UPDATES)
 	def _fetch_data(self):
 		"""Fetch latest data from Linky."""
 		from pylinky.client import PyLinkyError
+		from pylinky import LinkyClient
 		try:
+			self.client = LinkyClient(self._username, self._password)
 			self.client.fetch_data()
 		except PyLinkyError as exp:
 			_LOGGER.error("Error on receive last Linky data: %s", exp)

@@ -23,6 +23,7 @@ salon:
     - media_player.kodi
     - media_player.livebox_play_tv
     - media_player.snapcast_client_684a866e41cd41bbb16cd3f1a7195e57
+
 chambreparentale:
   name: Chambre Parentale
   view: yes
@@ -30,6 +31,7 @@ chambreparentale:
     - sensor.temperature_chambre_parentale
     - sensor.humidite_chambre_parentale
     - sensor.batterie_chambre_parentale
+
 chambresoline:
   name: Chambre Soline
   view: yes
@@ -37,6 +39,7 @@ chambresoline:
     - sensor.temperature_chambre_soline
     - sensor.humidite_chambre_soline
     - sensor.batterie_chambre_soline
+
 bureaudimitri:
   name: Bureau Dimitri
   view: yes
@@ -46,18 +49,21 @@ bureaudimitri:
     - sensor.batterie_bureau_dimitri
     - media_player.snapcast_client_a6959a1b583340b7a8741924192b921b
     - switch.feu_tricolore
+
 salledemain:
   name: Salle de bain
   view: yes
   entities:
     - sensor.temperature_salle_de_bain
     - sensor.humidite_salle_de_bain
+
 multiroom:
   name: Multiroom Sound System
   entities:
     - weblink.multiroom_player
     - media_player.mpd
     - media_player.snapcast_group_fcb1510e58d29e6103b43a6972ef711b
+
 sabnzbd:
   name: sabnzbd Status
   entities:
