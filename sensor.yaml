@@ -88,3 +88,14 @@
     - daily_1d_consumption
     - monthly_current_consumption
     - yearly_current_consumption
+    
+- platform: speedtest
+  hour:
+    - 8
+    - 12
+    - 16
+    - 20
+  monitored_conditions:
+    - ping
+    - download
+    - upload

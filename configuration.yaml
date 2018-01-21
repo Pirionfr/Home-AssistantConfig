@@ -73,7 +73,6 @@ map:
 # Track the sun
 sun:
 
-
 # Text to speech
 tts:
   - platform: google
@@ -147,6 +146,7 @@ media_player: !include mediaplayer.yaml
 light: !include light.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
+camera: !include camera.yaml
 
 automation: !include automations.yaml
 script: !include scripts.yaml

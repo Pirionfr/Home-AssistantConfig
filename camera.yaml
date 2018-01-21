@@ -1,0 +1,6 @@
+- platform: mjpeg
+  name: Garage Camera
+  mjpeg_url: !secret camera_garage_url
+  username: !secret camera_garage_username
+  password: !secret camera_garage_password
+  authentication: basic

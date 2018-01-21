@@ -57,6 +57,12 @@ salledemain:
     - sensor.temperature_salle_de_bain
     - sensor.humidite_salle_de_bain
 
+garage:
+  name: Garage
+  view: yes
+  entities:
+    - camera.garage_camera
+    
 multiroom:
   name: Multiroom Sound System
   entities:
