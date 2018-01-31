@@ -75,6 +75,7 @@ multiroom:
     - weblink.multiroom_player
     - media_player.mpd
     - media_player.snapcast_group_fcb1510e58d29e6103b43a6972ef711b
+    - media_player.spotify
 
 sabnzbd:
   name: sabnzbd Status
