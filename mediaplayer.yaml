@@ -8,5 +8,7 @@
     host: 192.168.0.16
     port: 8080
   - platform: spotify
-    client_id: 58df6616de504b7f92c786cbd94f5581
-    client_secret: ba6af51a07e4417e97ee12e45704bd6f
+    client_id: !secret spotify_clientid
+    client_secret: !secret spotify_secret
+  - platform: cast
+    host: 192.168.1.24

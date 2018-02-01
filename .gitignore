@@ -13,3 +13,4 @@ custom_components/sensor/__pycache__/**
 *.log
 *.db
 zone.yaml
+.spotify-token-cache
