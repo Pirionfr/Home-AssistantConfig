@@ -43,19 +43,18 @@
     wh3_46e0_hum:
       name: Humidité Salle de bain
       sensor_type: humidity
-      
-- platform: sabnzbd
-  name: sabnzbd
-  host: 192.168.0.20
-  api_key: fed54df0ddcc3b5fca0bc088a54b6e53
-  monitored_variables:
-    - 'current_status'
-    - 'speed'
-    - 'queue_size'
-    - 'queue_remaining'
-    - 'disk_size'
-    - 'disk_free'
-    - 'queue_count'
+    wh3_4490_temp:
+      name: Temperature alcôve
+      sensor_type: temperature
+    wh3_4490_hum:
+      name: Humidité alcôve
+      sensor_type: humidity
+    wh3_4c90_temp:
+      name: Temperature Chambre d'amis
+      sensor_type: temperature
+    wh3_4c90_hum:
+      name: Humidité Chambre d'amis
+      sensor_type: humidity
 
 
 - platform: wunderground

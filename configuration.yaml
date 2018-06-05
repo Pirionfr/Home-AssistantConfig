@@ -96,45 +96,37 @@ weblink:
     
 rflink:
   port: /dev/ttyACM0
+  
+#rflink2:
+#  port: /dev/ttyACM2
+
+zwave:
+  usb_path: /dev/ttyACM1
 
 logger:
   default: error
-#  logs:
-#    rflink: debug
-#    homeassistant.components.rflink: debug
+  logs:
+    rflink2: debug
+    custom_components.rflink2: debug
 
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  agent_user_id:  !secret google_assistant_agent_user_id
-  api_key:  !secret google_assistant_api_key
-  exposed_domains:
-    - switch
-    - light
-    - cover
-    - media_player
-    - group
-    - fan
-    - scene
-    - script
-    - climate
-
+    
 calendar:
   - platform: caldav
     url: !secret caldav_url
     username: !secret caldav_username
     password: !secret caldav_password
 
-mqtt:
-  broker: 192.168.0.36
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  port: 8883
-  certificate: /etc/ssl/certs/ca-certificates.crt
-  tls_insecure: true
+#mqtt:
+#  broker: 192.168.0.36
+#  username: !secret mqtt_username
+#  password: !secret mqtt_password
+#  port: 8883
+#  certificate: /etc/ssl/certs/ca-certificates.crt
+#  tls_insecure: true
 
-    
+hue:
+  bridges:
+    - host: 192.168.0.26
     
 device_tracker:
   - platform: nmap_tracker
@@ -142,6 +134,12 @@ device_tracker:
      - 192.168.0.39
   - platform: owntracks
 
+sabnzbd:
+  name: sabnzbd
+  host: 192.168.0.20
+  api_key: fed54df0ddcc3b5fca0bc088a54b6e53
+
+  
 media_player: !include mediaplayer.yaml
 light: !include light.yaml
 switch: !include switch.yaml

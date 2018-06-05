@@ -8,7 +8,7 @@ from homeassistant.const import (STATE_UNKNOWN, CONF_NAME, CONF_PASSWORD, CONF_U
 from homeassistant.util import Throttle
 import homeassistant.helpers.config_validation as cv
 
-REQUIREMENTS = ['pylinky==0.1.3']
+REQUIREMENTS = ['pylinky==0.1.5']
 
 _LOGGER = logging.getLogger(__name__)
 

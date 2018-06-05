@@ -27,8 +27,8 @@ salon:
     - sensor.humidite_salon
     - sensor.batterie_salon
     - media_player.kodi
-    - media_player.livebox_play_tv
     - media_player.snapcast_client_684a866e41cd41bbb16cd3f1a7195e57
+    
 
 chambreparentale:
   name: Chambre Parentale
@@ -37,6 +37,9 @@ chambreparentale:
     - sensor.temperature_chambre_parentale
     - sensor.humidite_chambre_parentale
     - sensor.batterie_chambre_parentale
+    - light.hue_white_lamp_3
+    - light.hue_white_lamp_2
+    
 
 chambresoline:
   name: Chambre Soline
@@ -55,6 +58,7 @@ bureaudimitri:
     - sensor.batterie_bureau_dimitri
     - media_player.snapcast_client_a6959a1b583340b7a8741924192b921b
     - switch.feu_tricolore
+    - light.hue_white_lamp_1
 
 salledemain:
   name: Salle de bain
@@ -63,6 +67,19 @@ salledemain:
     - sensor.temperature_salle_de_bain
     - sensor.humidite_salle_de_bain
 
+chambredamis:
+  name: Chambre d'amis
+  view: yes
+  entities:
+    - sensor.temperature_chambre_damis
+    - sensor.humidite_chambre_damis
+
+alcove:
+  name: Alcôve
+  view: yes
+  entities:
+    - sensor.temperature_alcove
+    - sensor.humidite_alcove
 garage:
   name: Garage
   view: yes
@@ -76,6 +93,7 @@ multiroom:
     - media_player.mpd
     - media_player.snapcast_group_fcb1510e58d29e6103b43a6972ef711b
     - media_player.spotify
+    - media_player.mibox3
 
 sabnzbd:
   name: sabnzbd Status

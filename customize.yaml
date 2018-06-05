@@ -20,3 +20,9 @@ media_player.snapcast_client_a6959a1b583340b7a8741924192b921b:
   friendly_name: Snapcast speaker2
 media_player.kodi:
   friendly_name: Kodi Media Center
+light.hue_white_lamp_1:
+  friendly_name: Luminaire
+light.hue_white_lamp_2:
+  friendly_name: Luminaire
+light.hue_white_lamp_3:
+  friendly_name: Chevet droit
