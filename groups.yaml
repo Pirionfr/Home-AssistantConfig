@@ -127,7 +127,6 @@ hyperion:
   entities:
     - input_select.hyperion_effects
     - script.hyperion_run
-    - switch.hyperion_service
     
 yucca:
   name: Yucca
