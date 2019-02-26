@@ -26,3 +26,13 @@ light.hue_white_lamp_2:
   friendly_name: Luminaire
 light.hue_white_lamp_3:
   friendly_name: Chevet droit
+sensor.miflora_battery:
+  friendly_name: Capteur Batterie
+sensor.miflora_conductivity:
+  friendly_name: Fertilite du sol
+sensor.miflora_light_intensity:
+  friendly_name: Eclairage
+sensor.miflora_moisture:
+  friendly_name: Humidite
+sensor.miflora_temperature:
+  friendly_name: Temperature

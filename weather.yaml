@@ -1,0 +1,3 @@
+- platform: openweathermap
+  api_key: 53b03de2be77f57319a4affbd0ac18db
+  mode: daily

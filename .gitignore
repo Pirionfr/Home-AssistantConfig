@@ -1,3 +1,21 @@
+# Logs
+logs
+*.log
+# Python cache
+__pycache__
+*.pyc
+
+*.uuid
+*.conf
+*.db
+*.db-journal
+*.log
+*.noload
+*.txt
+*.sqlite
+*.xml
+*.backup
+
 secrets.yaml
 known_devices.yaml
 .cloud/
@@ -6,11 +24,11 @@ deps
 deps/**
 tts
 tts/**
-custom_components/sensor/__pycache__
-custom_components/sensor/__pycache__/**
-.uuid
-.HA_VERSION
-*.log
-*.db
+.storage
+.storage/**
 .spotify-token-cache
 zone.yaml
+phue*
+zw*
+sabnzbd.conf
+aircast.xml

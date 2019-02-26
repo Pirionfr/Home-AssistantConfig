@@ -57,44 +57,24 @@
       sensor_type: humidity
 
 
-- platform: wunderground
-  api_key: df2d8ec061d5431c
-  lang: FR
-  monitored_conditions:
-   - temp_high_record_c
-   - temp_high_1d_c
-   - temp_c
-   - temp_low_1d_c
-   - temp_low_record_c
-   - precip_1d
-   - precip_1d_mm
-   - wind_kph
-   - wind_1d_kph
-   - alerts
-   - weather_1d_metric
-   - weather_1n_metric
-   - weather_2d_metric
-   - weather_2n_metric
-   - weather_3d_metric
-   - weather_3n_metric
-   - weather_4d_metric
-   - weather_4n_metric
-
 - platform: linky
   username: !secret linky_username
   password: !secret linky_password
-  monitored_variables:
-    - daily_1d_consumption
-    - monthly_current_consumption
-    - yearly_current_consumption
-    
-- platform: speedtest
-  hour:
-    - 8
-    - 12
-    - 16
-    - 20
+  peak_hours:
+     - ["00:00","23:59"]
+  peak_hours_cost: 0.09429
+  offpeak_hours_cost: 0.09429
+
+
+- platform: miflora
+  mac: 'C4:7C:8D:6A:04:0D'
+  name: miflora
+  force_update: false
+  median: 3
   monitored_conditions:
-    - ping
-    - download
-    - upload
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery
+
