@@ -1,0 +1,7 @@
+title: Météo
+badges:
+      - sun.sun
+icon: 'mdi:weather-cloudy'
+cards:
+  - type: weather-forecast
+    entity: weather.openweathermap

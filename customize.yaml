@@ -36,3 +36,36 @@ sensor.miflora_moisture:
   friendly_name: Humidite
 sensor.miflora_temperature:
   friendly_name: Temperature
+  
+sensor.sabnzbd_status:
+  friendly_name: Status
+sensor.sabnzbd_speed:
+  friendly_name: Vitesse
+sensor.sabnzbd_queue_count:
+  friendly_name: Queue Count
+sensor.sabnzbd_queue:
+  friendly_name: Queue
+sensor.sabnzbd_left:
+  friendly_name: Restant
+sensor.sabnzbd_disk_free:
+  friendly_name: Disque restant
+sensor.sabnzbd_disk:
+  friendly_name: Disque
+sensor.sabnzbd_daily_total:
+  friendly_name: Total/jours
+sensor.sabnzbd_weekly_total:
+  friendly_name: Total/semaine
+sensor.sabnzbd_monthly_total:
+  friendly_name: Total/mois
+sensor.sabnzbd_total:
+  friendly_name: Total  
+
+sensor.speedtest_download:
+  friendly_name: In 
+sensor.speedtest_ping:
+  friendly_name: Ping 
+sensor.speedtest_upload:
+  friendly_name: Out  
+  
+  
+  

@@ -1,0 +1,114 @@
+title: Floor plan
+icon: 'mdi:floor-plan'
+cards:
+  - type: picture-elements
+    image: /local/forplan/rdc.png
+    elements:
+      - type: icon
+        icon: 'mdi:flower'
+        entity: plant.yucca
+        style:
+          top: 64%
+          left: 65%
+          
+      - type: state-icon
+        entity: light.hue_white_lamp_3
+        tap_action:
+          action: toggle
+        style:
+          top: 68%
+          left: 5%
+          
+      - type: state-icon
+        entity: light.hue_white_lamp_2
+        tap_action:
+          action: toggle
+        style:
+          top: 78%
+          left: 19%
+      
+      - type: state-label
+        entity: sensor.temperature_chambre_parentale
+        style:
+          top: 64%
+          left: 19% 
+      - type: state-label
+        entity: sensor.humidite_chambre_parentale
+        style:
+          top: 68%
+          left: 19%              
+          
+      - type: state-label
+        entity: sensor.temperature_salon
+        style:
+          top: 64%
+          left: 80%      
+      - type: state-label
+        entity: sensor.humidite_salon
+        style:
+          top: 68%
+          left: 80%               
+         
+  - type: picture-elements
+    image: /local/forplan/etage.png
+    elements:
+      - type: state-icon
+        tap_action:
+          action: toggle
+        entity: switch.feu_tricolore
+        style:
+          top: 40%
+          left: 76%
+          
+      - type: state-icon
+        entity: light.hue_white_lamp_1
+        tap_action:
+          action: toggle
+        style:
+          top: 50%
+          left: 85%
+          
+      - type: state-label
+        entity: sensor.temperature_chambre_soline
+        style:
+          top: 65%
+          left: 50%      
+      - type: state-label
+        entity: sensor.humidite_chambre_soline
+        style:
+          top: 69%
+          left: 50%
+          
+      - type: state-label
+        entity: sensor.temperature_bureau_dimitri
+        style:
+          top: 40%
+          left: 86%      
+      - type: state-label
+        entity: sensor.humidite_bureau_dimitri
+        style:
+          top: 44%
+          left: 86%
+                      
+      - type: state-label
+        entity: sensor.temperature_chambre_d_amis
+        style:
+          top: 65%
+          left: 15%      
+      - type: state-label
+        entity: sensor.humidite_chambre_d_amis
+        style:
+          top: 69%
+          left: 15%
+           
+      - type: state-label
+        entity: sensor.temperature_alcove
+        style:
+          top: 6%
+          left: 18%      
+      - type: state-label
+        entity: sensor.humidite_alcove
+        style:
+          top: 10%
+          left: 18%
+            

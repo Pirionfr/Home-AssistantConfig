@@ -1,0 +1,84 @@
+title: main
+icon: 'mdi:home-outline'
+cards:
+  - type: 'custom:linky-card'
+    title: Consomation Electrique
+    entity: sensor.linky
+    show_header_toggle: false
+  
+  - type: plant-status
+    title: Yucca
+    entity: plant.yucca
+  
+  - type: glance
+    title: Salon
+    entities:
+      - sensor.temperature_salon
+      - sensor.humidite_salon
+      - sensor.batterie_salon
+      - media_player.snapcast_client_684a866e41cd41bbb16cd3f1a7195e57
+    
+  - type: glance
+    title: Chambre Parentale
+    entities:
+      - sensor.temperature_chambre_parentale
+      - sensor.humidite_chambre_parentale
+      - sensor.batterie_chambre_parentale
+      - entity: light.hue_white_lamp_3
+        tap_action:
+          action: toggle
+      - entity: light.hue_white_lamp_2
+        tap_action:
+          action: toggle
+            
+  - type: glance
+    title: Chambre Soline
+    entities:
+      - sensor.temperature_chambre_soline
+      - sensor.humidite_chambre_soline
+      - sensor.batterie_chambre_soline
+ 
+  - type: glance
+    title: Bureau Dimitri
+    entities:
+      - sensor.temperature_bureau_dimitri
+      - sensor.humidite_bureau_dimitri
+      - sensor.batterie_bureau_dimitri
+      - media_player.snapcast_client_a6959a1b583340b7a8741924192b921b
+      - entity: switch.feu_tricolore
+        tap_action:
+          action: toggle
+      - entity: light.hue_white_lamp_1
+        tap_action:
+          action: toggle
+  
+  - type: glance
+    title: Chambre Parentale
+    entities:
+      - sensor.temperature_chambre_parentale
+      - sensor.humidite_chambre_parentale
+      - sensor.batterie_chambre_parentale
+      - entity: light.hue_white_lamp_2
+        tap_action:
+          action: toggle
+      - entity: light.hue_white_lamp_3
+        tap_action:
+          action: toggle
+    
+  - type: glance
+    title: Salle de bain
+    entities:
+      - sensor.temperature_salle_de_bain
+      - sensor.humidite_salle_de_bain
+          
+  - type: glance
+    title: Chambre d'amis
+    entities:
+      - sensor.temperature_chambre_d_amis
+      - sensor.humidite_chambre_d_amis
+  
+  - type: glance
+    title: Alcôve
+    entities:
+      - sensor.temperature_alcove
+      - sensor.humidite_alcove

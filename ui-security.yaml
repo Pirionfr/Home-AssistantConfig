@@ -1,0 +1,15 @@
+title: Sécurité
+icon: 'mdi:cctv'
+cards:     
+  - type: picture-glance
+    title: Garage
+    entities: 
+      - camera.garage_camera
+    camera_image: camera.garage_camera
+  
+  - type: map
+    aspect_ratio: 16:9
+    default_zoom: 10
+    entities:
+      - device_tracker.dimitri_oneplus6t
+      - zone.home

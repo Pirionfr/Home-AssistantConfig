@@ -112,15 +112,11 @@ class LinkySensor(Entity):
         _LOGGER.debug("Start of update of linky data")
         self._lk.update()
         if not self._lk.success:
-            self._state = STATE_UNAVAILABLE
-            self._attributes = []
             return
-        _LOGGER.debug(self._lk.halfhourly)
+
         self._state = self._lk.daily[1][CONSUMPTION]
-        self._attributes["halfhourly"] = [d[CONSUMPTION]
-                                          for d in self._lk.halfhourly]
-        self._attributes["daily"] = [d[CONSUMPTION]
-                                     for d in self._lk.daily]
+        self._attributes["halfhourly"] = [d[CONSUMPTION] for d in self._lk.halfhourly]
+        self._attributes["daily"] = [d[CONSUMPTION] for d in self._lk.daily]
         self._attributes["peak_hours"] = sum([
             d[CONSUMPTION]
             if any([_between(h[0], h[1], d[TIME])
@@ -133,13 +129,10 @@ class LinkySensor(Entity):
              else d[CONSUMPTION]
              for d in self._lk.halfhourly]) / 2
         # From kW for 30 minutes to kWh
-        self._attributes["peak_offpeak_percent"] = ((self._attributes
-                                                     ["peak_hours"] *
-                                                     100) /
-                                                    (self._attributes
-                                                     ["peak_hours"] +
-                                                     self._attributes
-                                                     ["offpeak_hours"]))
+        self._attributes["peak_offpeak_percent"] = ((self._attributes ["peak_hours"] * 100) /
+                                                    (self._attributes ["peak_hours"] + 
+                                                     self._attributes ["offpeak_hours"]))
+        
         self._attributes["daily_cost"] = (self._peak_hours_cost *
                                           self._attributes["peak_hours"] +
                                           self._offpeak_hours_cost *
@@ -147,10 +140,10 @@ class LinkySensor(Entity):
         if self._lk.compare_month == 0:
             self._attributes["monthly_evolution"] = 0
         else:
-            self._attributes["monthly_evolution"] = (
-                                                            1 - ((self._lk.monthly[0][CONSUMPTION]) /self._lk.compare_month)) * 100
-        _LOGGER.debug("Computed values: %s",
-                      str(self._attributes))
+            self._attributes["monthly_evolution"] = \
+                1 - ((self._lk.monthly[0][CONSUMPTION]) / self._lk.compare_month) * 100
+            
+        _LOGGER.debug("Computed values: %s", str(self._attributes))
 
 
 def _hour_to_min(hour):
@@ -207,13 +200,13 @@ class LinkyData:
                 self.compare_month += value['valeur'] if value['valeur'] != -1 else 0
 
             _LOGGER.info("Same month last year (from 1st to same day): %s",
-                     str(self.compare_month))
+                         str(self.compare_month))
         except PyLinkyError as exp:
             reason = "(maybe due to night maintenance downtime schedule):"
             _LOGGER.warning("Unable to fetch Linky data %s %s", reason, exp)
             return False
         return True
-    
+
     def update(self):
         """Return the latest collected data from Linky."""
         self._fetch_data()

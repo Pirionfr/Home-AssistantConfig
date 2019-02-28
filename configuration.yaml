@@ -20,7 +20,11 @@ recorder:
 
 # Enables the frontend
 frontend:
+  javascript_version: auto
 
+lovelace:
+  mode: yaml  
+  
 # Enables configuration UI
 config:
 
@@ -83,7 +87,7 @@ panel_iframe:
 weblink:
   entities:
   - name: Multi-Room Player
-    url: http://192.http://192.168.0.20
+    url: http://192.168.0.20
     
 rflink:
   port: /dev/ttyACM0
@@ -91,15 +95,10 @@ rflink:
 #rflink2:
 #  port: /dev/ttyACM2
 
-zwave:
-  usb_path: /dev/ttyACM1
+
 
 logger:
   default: error
-  logs:
-    homeassistant.components.sensor.miflora: debug
-    rflink2: debug
-    custom_components.rflink2: debug
     
 
 calendar:
@@ -108,23 +107,6 @@ calendar:
     username: !secret caldav_username
     password: !secret caldav_password
 
-#mqtt:
-#  broker: 192.168.0.36
-#  username: !secret mqtt_username
-#  password: !secret mqtt_password
-#  port: 8883
-#  certificate: /etc/ssl/certs/ca-certificates.crt
-#  tls_insecure: true
-
-hue:
-  bridges:
-    - host: 192.168.0.26
-
-#device_tracker:
-#  - platform: nmap_tracker
-#    hosts:
-#     - 192.168.0.39
-#  - platform: owntracks
 
 sabnzbd:
   api_key: fed54df0ddcc3b5fca0bc088a54b6e53
@@ -162,13 +144,4 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 zone: !include zone.yaml
 group: !include groups.yaml
-
-input_select:
-  hyperion_effects:
-    name: Hyperion Effects
-    options: !include hyperion_effect_list.yaml
-    initial: Rainbow swirl
-    icon: mdi:white-balance-iridescent
-
-shell_command:
-  run_hyperion_effect:  "ssh pi@192.168.0.36 \"hyperion-remote -e ''\" "
+plant: !include plant.yaml

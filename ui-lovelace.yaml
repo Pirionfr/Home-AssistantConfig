@@ -1,0 +1,15 @@
+resources:
+  - url: /local/custom_ui/linky-card.js
+    type: js
+  - url: /local/custom_ui/ext-weblink.js?v=0
+    type: js
+
+
+views:
+  - !include ui-floorplan.yaml
+  - !include ui-home.yaml
+  - !include ui-weather.yaml
+  - !include ui-media.yaml
+  - !include ui-security.yaml
+  - !include ui-network.yaml
+

@@ -1,1 +1,4 @@
 - platform: rflink
+
+- platform: hyperion
+  host: 192.168.0.36

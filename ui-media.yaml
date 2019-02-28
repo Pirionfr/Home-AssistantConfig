@@ -1,0 +1,20 @@
+title: Multimedia
+icon: 'mdi:play-pause'
+cards:
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - type: custom:ext-weblink
+        name: Multi-Room Player
+        url: 'http://192.168.0.20'
+  
+  - type: media-control
+    entity: media_player.spotify
+    
+  - type: entities
+    show_header_toggle: false
+    title: Hyperion Control
+    entities:
+      - input_select.hyperion_effects
+      - script.hyperion_run
+        
