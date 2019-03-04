@@ -1,9 +1,9 @@
   - platform: snapcast
-    host: 192.168.0.20
+    host: !secret orb
   - platform: mpd
-    host: 192.168.0.20
+    host: !secret orb
   - platform: spotify
     client_id: !secret spotify_clientid
     client_secret: !secret spotify_secret
   - platform: cast
-    host: 192.168.1.24
+    host: !secret mibox4

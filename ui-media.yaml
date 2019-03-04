@@ -11,10 +11,4 @@ cards:
   - type: media-control
     entity: media_player.spotify
     
-  - type: entities
-    show_header_toggle: false
-    title: Hyperion Control
-    entities:
-      - input_select.hyperion_effects
-      - script.hyperion_run
         

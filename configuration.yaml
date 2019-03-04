@@ -16,7 +16,7 @@ homeassistant:
 recorder:
   db_url: !secret db_url
 
-
+person:
 
 # Enables the frontend
 frontend:
@@ -45,6 +45,7 @@ http:
   ip_ban_enabled: True
   login_attempts_threshold: 5
 
+system_health:
 
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
@@ -81,13 +82,9 @@ panel_iframe:
   configurator:
     title: Configurator
     icon: mdi:wrench
-    url: http://192.168.0.35:3218
+    url: !secret configurator
 
 
-weblink:
-  entities:
-  - name: Multi-Room Player
-    url: http://192.168.0.20
     
 rflink:
   port: /dev/ttyACM0

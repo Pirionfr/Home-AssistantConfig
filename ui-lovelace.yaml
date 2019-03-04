@@ -1,7 +1,9 @@
 resources:
-  - url: /local/custom_ui/linky-card.js
+  - url: /local/custom_ui/linky-card.js?v=0
     type: js
   - url: /local/custom_ui/ext-weblink.js?v=0
+    type: js
+  - url: /local/custom_ui/owntrack-card.js?v=0
     type: js
 
 

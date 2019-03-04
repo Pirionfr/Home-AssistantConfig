@@ -1,5 +1,5 @@
 - platform: rflink
-  automatic_add: false
+  automatic_add: true
   devices:
     fineoffset_003d_bat:
       name: Batterie chambre Soline
@@ -78,3 +78,14 @@
     - conductivity
     - battery
 
+- platform: glances
+  host: !secret orb
+  name: Server
+  version: 3
+  resources:
+    - disk_use
+    - disk_use_percent
+    - disk_free
+    - cpu_temp
+    - processor_load
+    - memory_use
