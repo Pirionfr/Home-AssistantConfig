@@ -179,7 +179,7 @@ class LinkyData:
     @Throttle(MIN_TIME_BETWEEN_UPDATES)
     def _fetch_data(self):
         """Fetch latest data from Linky."""
-        from pylinky.client import PyLinkyError
+        from pylinky.client import PyLinkyMaintenanceException
         from pylinky import LinkyClient
         from datetime import date
         from dateutil.relativedelta import relativedelta
@@ -201,7 +201,7 @@ class LinkyData:
 
             _LOGGER.info("Same month last year (from 1st to same day): %s",
                          str(self.compare_month))
-        except PyLinkyError as exp:
+        except PyLinkyMaintenanceException as exp:
             reason = "(maybe due to night maintenance downtime schedule):"
             _LOGGER.warning("Unable to fetch Linky data %s %s", reason, exp)
             return False
