@@ -13,10 +13,11 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-recorder:
-  db_url: !secret db_url
+default_config:
 
-person:
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
 
 # Enables the frontend
 frontend:
@@ -24,28 +25,16 @@ frontend:
 
 lovelace:
   mode: yaml  
-  
-# Enables configuration UI
-config:
 
-http:
-  api_password: !secret http_password
-  base_url: !secret base_url
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-  cors_allowed_origins:
-    - https://google.com
-    - https://home-assistant.io
-#  use_x_forwarded_for: True
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 192.168.0.0/24
-    - fd00::/8
-  ip_ban_enabled: True
-  login_attempts_threshold: 5
+panel_iframe:
+  tasmoadmin:
+    title: TasmoAdmin
+    icon: mdi:lightbulb-on
+    url: !secret asmoadmin_url
 
-system_health:
+local_ip:
+
+stream:
 
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
@@ -57,57 +46,58 @@ discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# Enables support for tracking state changes over time
-history:
-
-# View all events in a logbook
-logbook:
-
-# Enables a map showing the location of tracked devices
-map:
 
 # Track the sun
 sun:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
     language: 'fr'
 
-# Cloud
-cloud:
 
+upnp:
 
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: !secret configurator
-
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
 
     
 rflink:
-  port: /dev/ttyACM0
+  port: 6000
+  host: !secret rflink
   
 #rflink2:
 #  port: /dev/ttyACM2
 
+tplink:
 
+octoprint:
+  host: !secret orb
+  port: 5000
+  api_key: !secret octoprint_api_key
+  bed: true
+  number_of_tools: 1
 
 logger:
   default: error
-    
+#  logs:
+#    rflink: debug
+#    homeassistant.components.rflink: debug
 
-calendar:
-  - platform: caldav
-    url: !secret caldav_url
-    username: !secret caldav_username
-    password: !secret caldav_password
-
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
 
 sabnzbd:
-  api_key: fed54df0ddcc3b5fca0bc088a54b6e53
-  host: 192.168.0.20
+  api_key: !secret sabnzbd_api_key
+  host: !secret orb
   name: sabnzbd
   port: 8080
   sensors:
@@ -130,6 +120,23 @@ speedtestdotnet:
     - ping
     - download
     - upload
+
+calendar:
+  - platform: caldav
+    url: !secret caldav_url
+    username: !secret caldav_username
+    password: !secret caldav_password
+
+
+#glances:
+#  port: 61209
+#  name: 127.0.0.1
+#  ssl: true
+#  verify_ssl: false
+
+#linky:
+#  username: !secret linky_username
+#  password: !secret linky_password
 
 media_player: !include mediaplayer.yaml
 light: !include light.yaml

@@ -2,13 +2,13 @@
   automatic_add: true
   devices:
     fineoffset_003d_bat:
-      name: Batterie chambre Soline
+      name: Batterie chambre Noah
       sensor_type: battery
     fineoffset_003d_temp:
-      name: Temperature chambre Soline
+      name: Temperature chambre Noah
       sensor_type: temperature
     fineoffset_003d_hum:
-      name: Humidité chambre Soline
+      name: Humidité chambre Noah
       sensor_type: humidity
     fineoffset_005b_bat:
       name: Batterie bureau Dimitri
@@ -28,19 +28,19 @@
     fineoffset_001d_hum:
       name: Humidité chambre Parentale
       sensor_type: humidity
-    inovalley_fc01_bat:
+    inovalley_0b01_bat:
       name: batterie Salon
       sensor_type: battery
-    inovalley_fc01_temp:
+    inovalley_0b01_temp:
       name: Temperature Salon
       sensor_type: temperature
-    inovalley_fc01_hum:
+    inovalley_0b01_hum:
       name: Humidité Salon
       sensor_type: humidity
-    wh3_46e0_temp:
+    wh3_4b00_temp:
       name: Temperature Salle de bain
       sensor_type: temperature
-    wh3_46e0_hum:
+    wh3_4b00_hum:
       name: Humidité Salle de bain
       sensor_type: humidity
     wh3_4490_temp:
@@ -50,42 +50,10 @@
       name: Humidité alcôve
       sensor_type: humidity
     wh3_4c90_temp:
-      name: Temperature Chambre d'amis
+      name: Temperature chambre Soline
       sensor_type: temperature
     wh3_4c90_hum:
-      name: Humidité Chambre d'amis
+      name: Humidité Chambre Soline
       sensor_type: humidity
 
 
-- platform: linky
-  username: !secret linky_username
-  password: !secret linky_password
-  peak_hours:
-     - ["00:00","24:00"]
-  peak_hours_cost: 0.09429
-  offpeak_hours_cost: 0.09429
-
-
-- platform: miflora
-  mac: 'C4:7C:8D:6A:04:0D'
-  name: miflora
-  force_update: false
-  median: 3
-  monitored_conditions:
-    - moisture
-    - light
-    - temperature
-    - conductivity
-    - battery
-
-- platform: glances
-  host: !secret orb
-  name: Server
-  version: 3
-  resources:
-    - disk_use
-    - disk_use_percent
-    - disk_free
-    - cpu_temp
-    - processor_load
-    - memory_use

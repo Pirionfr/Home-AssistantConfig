@@ -1,6 +1,17 @@
-- platform: mjpeg
+- platform: generic
   name: Garage Camera
-  mjpeg_url: !secret camera_garage_url
+  still_image_url: !secret camera_garage_still_image_url
+  stream_source: !secret camera_garage_stream_source
   username: !secret camera_garage_username
   password: !secret camera_garage_password
   authentication: basic
+  verify_ssl: false
+
+- platform: generic
+  name: Camera 2
+  still_image_url: !secret camera_2_still_image_url 
+  stream_source: !secret camera_2_stream_source
+  username: !secret camera_2_username
+  password: !secret camera_2_password
+  authentication: basic
+  verify_ssl: false

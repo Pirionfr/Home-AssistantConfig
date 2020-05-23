@@ -8,8 +8,10 @@ cards:
         icon: 'mdi:flower'
         entity: plant.yucca
         style:
-          top: 64%
-          left: 65%
+          top: 83%
+          left: 47%
+          --iron-icon-stroke-color: black
+          --iron-icon-fill-color: rgba(0, 111, 0, .75)
           
       - type: state-icon
         entity: light.hue_white_lamp_3
@@ -47,19 +49,44 @@ cards:
         entity: sensor.humidite_salon
         style:
           top: 68%
-          left: 80%               
+          left: 80%    
+          
+      - type: state-label
+        entity: sensor.temperature_salle_de_bain
+        style:
+          top: 38%
+          left: 15%      
+      - type: state-label
+        entity: sensor.humidite_salle_de_bain
+        style:
+          top: 42%
+          left: 15%
+      
+      - type: icon
+        icon: 'mdi:cast'
+        entity: media_player.salon
+        style:
+          top: 35%
+          left: 70% 
+          
+      - type: icon
+        icon: 'mdi:cast'
+        entity: media_player.vsx_934_0009b0f227ee
+        style:
+          top: 29%
+          left: 70%          
          
   - type: picture-elements
     image: /local/forplan/etage.png
     elements:
-      - type: state-icon
-        tap_action:
-          action: toggle
-        entity: switch.feu_tricolore
+    
+      - type: icon
+        icon: 'mdi:printer'
+        entity: group.printer
         style:
-          top: 40%
-          left: 76%
-          
+          top: 80%
+          left: 80%
+
       - type: state-icon
         entity: light.hue_white_lamp_1
         tap_action:
@@ -69,34 +96,23 @@ cards:
           left: 85%
           
       - type: state-label
-        entity: sensor.temperature_chambre_soline
+        entity: sensor.temperature_chambre_noah
         style:
           top: 65%
           left: 50%      
       - type: state-label
-        entity: sensor.humidite_chambre_soline
+        entity: sensor.humidite_chambre_noah
         style:
           top: 69%
           left: 50%
-          
-      - type: state-label
-        entity: sensor.temperature_bureau_dimitri
-        style:
-          top: 40%
-          left: 86%      
-      - type: state-label
-        entity: sensor.humidite_bureau_dimitri
-        style:
-          top: 44%
-          left: 86%
                       
       - type: state-label
-        entity: sensor.temperature_chambre_d_amis
+        entity: sensor.temperature_chambre_soline
         style:
           top: 65%
           left: 15%      
       - type: state-label
-        entity: sensor.humidite_chambre_d_amis
+        entity: sensor.humidite_chambre_soline
         style:
           top: 69%
           left: 15%
@@ -111,4 +127,63 @@ cards:
         style:
           top: 10%
           left: 18%
+    
+  - type: picture-elements
+    image: /local/forplan/sous_sol.png
+    elements:
+        - type: icon
+          icon: 'mdi:video'
+          entity: camera.camera_2
+          style:
+            top: 30%
+            left: 45%
+            transform: rotate(170deg)
             
+        - type: icon
+          icon: 'mdi:clipboard-pulse'
+          entity: sensor.linky
+          style:
+            top: 29%
+            left: 40%
+            --iron-icon-stroke-color: black
+            --iron-icon-fill-color: rgba(255, 255, 0, .75)
+        
+        - type: state-icon
+          tap_action:
+            action: toggle
+          entity: switch.feu_tricolore
+          style:
+            top: 94%
+            left: 30%
+        
+        - type: state-label
+          entity: sensor.temperature_bureau_dimitri
+          style:
+            top: 64%
+            left: 20%      
+        - type: state-label
+          entity: sensor.humidite_bureau_dimitri
+          style:
+            top: 68%
+            left: 20%
+            
+        - type: icon
+          icon: 'mdi:printer-3d'
+          entity: switch.cr10s
+          style:
+            top: 94%
+            left: 10%
+        
+        - type: icon
+          icon: 'mdi:google-home'
+          entity: media_player.bureau
+          style:
+            top: 94%
+            left: 14%
+            
+        - type: icon
+          icon: 'mdi:server'
+          entity: media_player.bureau
+          style:
+            top: 94%
+            left: 5%

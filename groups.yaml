@@ -1,2 +1,11 @@
-
+printer:
+  name: Canon mg5420
+  entities:
+    - sensor.canon_mg5400_series
+    - sensor.canon_mg5400_series_black_bk
+    - sensor.canon_mg5400_series_black_pgbk
+    - sensor.canon_mg5400_series_cyan
+    - sensor.canon_mg5400_series_magenta
+    - sensor.canon_mg5400_series_yellow
+    - sensor.canon_mg5400_series_uptime
     
