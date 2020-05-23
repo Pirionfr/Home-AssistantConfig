@@ -1,9 +1,1 @@
-  - platform: snapcast
-    host: !secret orb
-  - platform: mpd
-    host: !secret orb
-  - platform: spotify
-    client_id: !secret spotify_clientid
-    client_secret: !secret spotify_secret
-  - platform: cast
-    host: !secret mibox4
+- platform: onkyo

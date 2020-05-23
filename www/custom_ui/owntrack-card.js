@@ -1,13 +1,11 @@
 class OwntrackCard extends HTMLElement {
   set hass(hass) {
-    var state = hass.states[this.config.entity];
+	var entities = this.config.entities  
+    var state = hass.states[entities[0]];
     var attributes = state.attributes;
 	
-	var bat_icon = "mdi:battery"
-	var batt = 10 + 10*Math.floor(attributes.battery/10);
-	if(batt != 100) {
-		bat_icon = bat_icon + "-" + batt
-	}
+	var battery = hass.states[entities[1]]
+	
 		
     this.innerHTML = `
     <style>
@@ -42,8 +40,8 @@ class OwntrackCard extends HTMLElement {
 			<div class="owntrack_name">${attributes.friendly_name}</div>
 			<div class="owntrack_state">${state.state}</div>
 			<div class="owntrack_battery">
-				<span class="ha-icon"><ha-icon icon="${bat_icon}"></ha-icon>
-				${attributes.battery}%
+				<span class="ha-icon"><ha-icon icon="${battery.attributes.icon}"></ha-icon>
+				${battery.state}${battery.attributes.unit_of_measurement}
 			</div>
 		</div>
 	</div>

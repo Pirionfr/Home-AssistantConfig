@@ -1,42 +1,12 @@
-sensor.alectov3_303d_bat:
-  hidden: true
-sensor.alectov3_303d_temp:
-  hidden: true
-sensor.alectov3_303d_hum:
-  hidden: true
-sensor.owl_cm180_0011_watt:
-  hidden: true
-sensor.owl_cm180_0011_kwatt:
-  hidden: true
-sensor.alectov3_305b_hum:
-  hidden: true
-sensor.alectov3_305b_temp:
-  hidden: true
-sensor.alectov3_305b_bat:
-  hidden: true
-media_player.snapcast_client_7bqdu16b30004964:
-  hidden: true
-media_player.snapcast_client_a6959a1b583340b7a8741924192b921b:
-  friendly_name: Snapcast speaker2
-media_player.kodi:
-  friendly_name: Kodi Media Center
+media_player.vsx_934_0009b0f227ee:
+  entity_id: media_player.vsx_934
+  friendly_name: ampli_salon
 light.hue_white_lamp_1:
-  friendly_name: Luminaire
+  friendly_name: Chevet Gauche
 light.hue_white_lamp_2:
   friendly_name: Luminaire
 light.hue_white_lamp_3:
-  friendly_name: Chevet droit
-sensor.miflora_battery:
-  friendly_name: Capteur Batterie
-sensor.miflora_conductivity:
-  friendly_name: Fertilite du sol
-sensor.miflora_light_intensity:
-  friendly_name: Eclairage
-sensor.miflora_moisture:
-  friendly_name: Humidite
-sensor.miflora_temperature:
-  friendly_name: Temperature
-  
+  friendly_name: Chevet Droit
 sensor.sabnzbd_status:
   friendly_name: Status
 sensor.sabnzbd_speed:
@@ -58,14 +28,26 @@ sensor.sabnzbd_weekly_total:
 sensor.sabnzbd_monthly_total:
   friendly_name: Total/mois
 sensor.sabnzbd_total:
-  friendly_name: Total  
-
+  friendly_name: Total
 sensor.speedtest_download:
-  friendly_name: In 
+  friendly_name: In
 sensor.speedtest_ping:
-  friendly_name: Ping 
+  friendly_name: Ping
 sensor.speedtest_upload:
-  friendly_name: Out  
-  
-  
-  
+  friendly_name: Out
+sensor.server_cpu_load:
+  friendly_name: CPU Load
+sensor.server_cpu_temp:
+  friendly_name: CPU Temp
+sensor.server_disk_free:
+  friendly_name: Disc free
+sensor.server_disk_used:
+  friendly_name: Disc used
+sensor.server_disk_used_2:
+  friendly_name: Disc used
+sensor.server_ram_used:
+  friendly_name: Ram used
+cover.garage_door:
+  friendly_name: Porte de garage
+sensor.plex:
+  icon: mdi:magnify

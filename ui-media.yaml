@@ -1,14 +1,14 @@
 title: Multimedia
 icon: 'mdi:play-pause'
 cards:
-  - type: entities
-    show_header_toggle: false
-    entities:
-      - type: custom:ext-weblink
-        name: Multi-Room Player
-        url: 'http://192.168.0.20'
-  
   - type: media-control
-    entity: media_player.spotify
+    entity: media_player.bureau
     
-        
+  - type: media-control
+    entity: media_player.salon
+    
+  - type: media-control
+    entity: media_player.spotify_pirionfr
+    
+  - type: media-control
+    entity: media_player.vsx_934_0009b0f227ee

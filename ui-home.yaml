@@ -1,26 +1,26 @@
 title: main
 icon: 'mdi:home-outline'
 cards:
-  - type: 'custom:linky-card'
-    title: Consomation Electrique
-    entity: sensor.linky
-    show_header_toggle: false
-    
-  - type: plant-status
-    title: Yucca
-    entity: plant.yucca
+  #- type: 'custom:linky-card'
+  #  title: Consomation Electrique
+  #  entity: sensor.linky
+  #  show_header_toggle: false
     
   - type: vertical-stack
     title: Rez de chaussée
     cards:
+      - type: plant-status
+        title: Yukka
+        entity: plant.yukka
+        
       - type: glance
         title: Salon
         entities:
           - sensor.temperature_salon
           - sensor.humidite_salon
           - sensor.batterie_salon
-          - media_player.snapcast_client_684a866e41cd41bbb16cd3f1a7195e57
-    
+          - media_player.salon
+
       - type: glance
         title: Chambre Parentale
         entities:
@@ -31,6 +31,9 @@ cards:
             tap_action:
               action: toggle
           - entity: light.hue_white_lamp_2
+            tap_action:
+              action: toggle
+          - entity: light.hue_white_lamp_1
             tap_action:
               action: toggle
 
@@ -44,40 +47,42 @@ cards:
     title: Etage
     cards: 
       - type: glance
+        title: Chambre Noah
+        entities:
+          - sensor.temperature_chambre_noah
+          - sensor.humidite_chambre_noah
+          - sensor.batterie_chambre_noah
+ 
+
+      - type: glance
         title: Chambre Soline
         entities:
           - sensor.temperature_chambre_soline
           - sensor.humidite_chambre_soline
-          - sensor.batterie_chambre_soline
- 
-      - type: glance
-        title: Bureau Dimitri
-        entities:
-          - sensor.temperature_bureau_dimitri
-          - sensor.humidite_bureau_dimitri
-          - sensor.batterie_bureau_dimitri
-          - media_player.snapcast_client_a6959a1b583340b7a8741924192b921b
-          - entity: switch.feu_tricolore
-            tap_action:
-              action: toggle
-          - entity: light.hue_white_lamp_1
-            tap_action:
-              action: toggle
-
-      - type: glance
-        title: Chambre d'amis
-        entities:
-          - sensor.temperature_chambre_d_amis
-          - sensor.humidite_chambre_d_amis
   
       - type: glance
         title: Alcôve
         entities:
           - sensor.temperature_alcove
           - sensor.humidite_alcove
-  
-  
 
-  
-  
             
+  - type: vertical-stack
+    title: Sous-sol
+    cards:
+      - type: glance
+        title: Bureau Dimitri
+        entities:
+          - sensor.temperature_bureau_dimitri
+          - sensor.humidite_bureau_dimitri
+          - sensor.batterie_bureau_dimitri
+          - entity: switch.feu_tricolore
+            tap_action:
+              action: toggle
+          - media_player.bureau
+
+      - type: glance
+        title: Garage
+        entities:
+          - cover.garage_door
+          

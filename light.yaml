@@ -1,4 +1,1 @@
 - platform: rflink
-
-- platform: hyperion
-  host: !secret hyperion

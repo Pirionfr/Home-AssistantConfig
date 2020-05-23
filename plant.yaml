@@ -1,10 +1,10 @@
-yucca:
+yukka:
     sensors:
-      moisture: sensor.miflora_moisture
-      battery: sensor.miflora_battery
-      temperature: sensor.miflora_temperature
-      conductivity: sensor.miflora_conductivity
-      brightness: sensor.miflora_light_intensity
+      moisture: sensor.yukka_moisture
+      battery: sensor.yukka_battery
+      temperature: sensor.yukka_temperature
+      conductivity: sensor.yukka_conductivity
+      brightness: sensor.yukka_light
     min_moisture: 20
     max_moisture: 60
     min_battery: 17

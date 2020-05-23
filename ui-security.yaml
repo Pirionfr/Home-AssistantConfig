@@ -5,26 +5,32 @@ cards:
   - type: horizontal-stack
     cards:
       - type: 'custom:owntrack-card'
-        entity: device_tracker.dimitri_oneplus6t
+        entities: 
+          - device_tracker.oneplus_a6010
+          - sensor.oneplus_a6010_battery_level
         image: '/local/photo/dim.png'
         
       - type: 'custom:owntrack-card'
-        entity: device_tracker.patoo_honor
+        entities: 
+          - device_tracker.dli_l22
+          - sensor.dli_l22_battery_level
         image: '/local/photo/patoo.png'
     
-
-  - type: picture-glance
-    title: Garage
-    entities: 
-      - camera.garage_camera
-    camera_image: camera.garage_camera
-  
   - type: map
-    aspect_ratio: 16:9
+    aspect_ratio: 1.78
     default_zoom: 10
     entities:
-      - device_tracker.dimitri_oneplus6t
-      - device_tracker.patoo_honor
+      - device_tracker.oneplus_a6010
+      - device_tracker.dli_l22
       - zone.home
       - zone.ovh
       - zone.ecole
+      
+  - type: picture-glance
+    title: Garage
+    entities: 
+      - switch.dafang_ir_filter
+      - switch.dafang_ir_led
+      - switch.dafang_night_mode
+      - binary_sensor.dafang_motion_sensor
+    camera_image: camera.camera_garage

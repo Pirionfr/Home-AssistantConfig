@@ -5,3 +5,8 @@ icon: 'mdi:weather-cloudy'
 cards:
   - type: weather-forecast
     entity: weather.openweathermap
+  - type: iframe
+    aspect_ratio: 90%
+    url: >-
+      https://embed.windy.com/embed2.html?lat=47.960&lon=-4.599&zoom=8&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=47.960&detailLon=-4.599&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1
+      
