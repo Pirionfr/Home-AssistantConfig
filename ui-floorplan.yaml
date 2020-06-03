@@ -139,7 +139,7 @@ cards:
 
         - type: icon
           icon: 'mdi:video'
-          entity: camera.camera_2
+          entity: camera.garage_camera
           style:
             top: 30%
             left: 45%

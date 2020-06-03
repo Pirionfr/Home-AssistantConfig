@@ -146,6 +146,9 @@ cover:
       device_key: !secret opengarage_device_key
       name: Garage Door
 
+zigate:
+  admin_panel: true
+  host: 192.168.0.47:9999
 
 media_player: !include mediaplayer.yaml
 light: !include light.yaml

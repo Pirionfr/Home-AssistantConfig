@@ -33,4 +33,4 @@ cards:
       - switch.dafang_ir_led
       - switch.dafang_night_mode
       - binary_sensor.dafang_motion_sensor
-    camera_image: camera.camera_garage
+    camera_image: camera.garage_camera
