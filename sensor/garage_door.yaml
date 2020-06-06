@@ -1,0 +1,34 @@
+- platform: template
+  sensors:
+    garage_status:
+      friendly_name: 'Garage Status'
+      icon_template: '{% if states.cover.garage_door %}
+          {% if states.cover.garage_door.attributes["door_state"] == "open" %}
+            mdi:garage-open
+          {% elif states.cover.garage_door.attributes["door_state"] == "closed" %}
+            mdi:garage-alert
+          {% elif states.cover.garage_door.attributes["door_state"] == "opening" %}
+            mdi:garage-alert
+          {% elif states.cover.garage_door.attributes["door_state"] == "closing" %}
+            mdi:garage
+          {% else %}
+             mdi:garage
+          {% endif %}
+          {% else %}
+           mdi:garage
+          {% endif %}'
+      value_template: '{% if states.cover.garage_door %}
+          {% if states.cover.garage_door.attributes["door_state"] == "open" %}
+            Open
+          {% elif states.cover.garage_door.attributes["door_state"] == "closed" %}
+            Closed
+          {% elif states.cover.garage_door.attributes["door_state"] == "opening" %}
+            Opening
+          {% elif states.cover.garage_door.attributes["door_state"] == "closing" %}
+            Closing
+          {% else %}
+            Unknown
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'

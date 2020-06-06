@@ -1,0 +1,4 @@
+- platform: waqi
+  token: !secret waqi_token
+  locations: !secret waqi_location
+  stations:  !secret waqi_stations

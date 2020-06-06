@@ -1,0 +1,16 @@
+api_key: !secret sabnzbd_api_key
+host: !secret orb
+name: sabnzbd
+port: 8080
+sensors:
+  - current_status
+  - speed
+  - queue_size
+  - queue_remaining
+  - disk_size
+  - disk_free
+  - queue_count
+  - day_size
+  - week_size
+  - month_size
+  - total_size

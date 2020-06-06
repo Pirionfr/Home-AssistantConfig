@@ -1,0 +1,4 @@
+- platform: caldav
+  url: !secret caldav_url
+  username: !secret caldav_username
+  password: !secret caldav_password

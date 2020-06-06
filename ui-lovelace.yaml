@@ -5,13 +5,17 @@ resources:
     type: js
   - url: /local/custom_ui/owntrack-card.js?v=0
     type: js
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+    type: module
 
 
 views:
-  - !include ui-floorplan.yaml
-  - !include ui-home.yaml
-  - !include ui-weather.yaml
-  - !include ui-media.yaml
-  - !include ui-security.yaml
-  - !include ui-network.yaml
+  - !include ui-lovelace/ui-floorplan.yaml
+  - !include ui-lovelace/ui-home.yaml
+  - !include ui-lovelace/ui-weather.yaml
+  - !include ui-lovelace/ui-media.yaml
+  - !include ui-lovelace/ui-security.yaml
+  - !include ui-lovelace/ui-network.yaml
 

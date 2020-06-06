@@ -1,0 +1,6 @@
+light.hue_white_lamp_1:
+  friendly_name: Chevet Gauche
+light.hue_white_lamp_2:
+  friendly_name: Luminaire
+light.hue_white_lamp_3:
+  friendly_name: Chevet Droit

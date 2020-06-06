@@ -1,0 +1,2 @@
+- platform: nmap_tracker
+  hosts: !secret local

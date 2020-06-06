@@ -1,0 +1,6 @@
+climate_salon:
+  name: Climate salon
+  entities:
+    - sensor.inovalley_0b01_hum
+    - sensor.inovalley_0b01_temp
+    - sensor.inovalley_0b01_bat

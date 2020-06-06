@@ -5,13 +5,15 @@ homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 70
+  elevation: !secret elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Europe/Paris
+  time_zone: !secret time_zone
   # Customization file
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize/
+  internal_url: !secret internal_url
+  external_url: !secret external_url
 
 default_config:
 
@@ -26,138 +28,40 @@ frontend:
 lovelace:
   mode: yaml  
 
-panel_iframe:
-  tasmoadmin:
-    title: TasmoAdmin
-    icon: mdi:lightbulb-on
-    url: !secret tasmoadmin_url
+panel_iframe: !include panel_iframe.yaml
 
-local_ip:
-
-stream:
-
-updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
-
-# Discover some devices automatically
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
+local_ip:
+stream:
 conversation:
-
-
-# Track the sun
-sun:
-
-# Text to speech
-tts:
-  - platform: google_translate
-    service_name: google_say
-    language: 'fr'
-
-
 upnp:
-
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: !secret influxdb_username
-  password: !secret influxdb_password
-  max_retries: 3
-  default_measurement: state
-
-    
-rflink:
-  port: 6000
-  host: !secret rflink
-  
-#rflink2:
-#  port: /dev/ttyACM2
-
 tplink:
+influxdb: !include components/influxdb.yaml
+rflink: !include components/rflink.yaml
+octoprint: !include components/octoprint.yaml
+spotify: !include components/spotify.yaml
+sabnzbd: !include components/sabnzbd.yaml
+speedtestdotnet: !include components/speedtestdotnet.yaml
+calendar: !include components/calendar.yaml
+zigate: !include components/zigate.yaml
+hue: !include components/hue.yaml
+mqtt: !include components/mqtt.yaml
+tts: !include components/tts.yaml
+media_player: !include components/mediaplayer.yaml
+camera: !include components/camera.yaml
+weather: !include components/weather.yaml
+plant: !include components/plant.yaml
+device_tracker: !include components/device_tracker.yaml
+logger: !include components/logger.yaml
 
-octoprint:
-  host: !secret orb
-  port: 5000
-  api_key: !secret octoprint_api_key
-  bed: true
-  number_of_tools: 1
+cover: !include_dir_merge_list cover/
+light: !include_dir_merge_list light/
+switch: !include_dir_merge_list switch/
+sensor: !include_dir_merge_list sensor/
+binary_sensor: !include_dir_merge_list binary_sensor/
 
-logger:
-  default: error
-#  logs:
-#    rflink: debug
-#    homeassistant.components.rflink: debug
-
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
-
-sabnzbd:
-  api_key: !secret sabnzbd_api_key
-  host: !secret orb
-  name: sabnzbd
-  port: 8080
-  sensors:
-    - current_status
-    - speed
-    - queue_size
-    - queue_remaining
-    - disk_size
-    - disk_free
-    - queue_count
-    - day_size
-    - week_size
-    - month_size
-    - total_size
-  
-speedtestdotnet:
-  scan_interval:
-    minutes: 180
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-
-calendar:
-  - platform: caldav
-    url: !secret caldav_url
-    username: !secret caldav_username
-    password: !secret caldav_password
-
-
-#glances:
-#  port: 61209
-#  name: 127.0.0.1
-#  ssl: true
-#  verify_ssl: false
-
-#linky:
-#  username: !secret linky_username
-#  password: !secret linky_password
-
-cover:
-  platform: opengarage
-  covers:
-    garage:
-      host: !secret opengarage
-      device_key: !secret opengarage_device_key
-      name: Garage Door
-
-zigate:
-  admin_panel: true
-  host: 192.168.0.47:9999
-
-media_player: !include mediaplayer.yaml
-light: !include light.yaml
-switch: !include switch.yaml
-sensor: !include sensor.yaml
-camera: !include camera.yaml
-weather: !include weather.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
+automation: !include_dir_merge_list automation/
+script: !include_dir_merge_list script/
+group: !include_dir_merge_named group/
 zone: !include zone.yaml
-group: !include groups.yaml
-plant: !include plant.yaml
+scene: !include_dir_merge_list scene/

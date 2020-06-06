@@ -1,4 +1,0 @@
-- platform: rflink
-  devices:
-    kaku_00004f_f:
-        name: Feu Tricolore

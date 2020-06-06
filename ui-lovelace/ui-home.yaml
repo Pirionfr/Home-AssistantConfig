@@ -1,0 +1,198 @@
+title: main
+icon: 'mdi:home-outline'
+cards:
+  #- type: 'custom:linky-card'
+  #  title: Consomation Electrique
+  #  entity: sensor.linky
+  #  show_header_toggle: false
+    
+  - type: vertical-stack
+    title: Rez de chaussée
+    cards:
+
+        
+      - type: vertical-stack
+        title: Salon
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_salon
+                line_color: blue
+                line_width: 8
+                font_size: 75
+
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_salon
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+
+          - type: custom:mini-media-player
+            entity: media_player.salon
+
+          - type: plant-status
+            title: Yukka
+            entity: plant.yukka
+
+      - type: vertical-stack
+        title: Chambre Parentale
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_chambre_parentale
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_chambre_parentale
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+          - type: glance
+            entities:
+              - entity: light.hue_white_lamp_3
+                tap_action:
+                  action: toggle
+              - entity: light.hue_white_lamp_2
+                tap_action:
+                  action: toggle
+              - entity: light.hue_white_lamp_1
+                tap_action:
+                  action: toggle
+
+      - type: vertical-stack
+        title: Salle de bain
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_salle_de_bain
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_salle_de_bain
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+              
+  - type: vertical-stack
+    title: Etage
+    cards:
+      - type: vertical-stack
+        title: Chambre Noah
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_chambre_noah
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_chambre_noah
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+
+      - type: vertical-stack
+        title: Chambre Soline
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_chambre_soline
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_chambre_soline
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+
+
+      - type: vertical-stack
+        title: Alcôve
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_alcove
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_alcove
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+
+
+            
+  - type: vertical-stack
+    title: Sous-sol
+    cards:
+      - type: vertical-stack
+        title: Bureau Dimitri
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.temperature_bureau_dimitri
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.humidite_bureau_dimitri
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+
+          - type: glance
+            entities:
+              - entity: switch.feu_tricolore
+                tap_action:
+                  action: toggle
+
+          - type: custom:mini-media-player
+            entity: media_player.bureau
+
+
+      - type: vertical-stack
+        title: Garage
+        cards:
+          - type: glance
+            entities:
+              - cover.garage_door
+          

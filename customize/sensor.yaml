@@ -1,12 +1,3 @@
-media_player.vsx_934_0009b0f227ee:
-  entity_id: media_player.vsx_934
-  friendly_name: ampli_salon
-light.hue_white_lamp_1:
-  friendly_name: Chevet Gauche
-light.hue_white_lamp_2:
-  friendly_name: Luminaire
-light.hue_white_lamp_3:
-  friendly_name: Chevet Droit
 sensor.sabnzbd_status:
   friendly_name: Status
 sensor.sabnzbd_speed:

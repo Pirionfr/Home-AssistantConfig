@@ -1,0 +1,3 @@
+media_player:
+  - host: !secret mibox4
+  - host: !secret google_home

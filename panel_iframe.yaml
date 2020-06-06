@@ -1,0 +1,4 @@
+tasmoadmin:
+  title: TasmoAdmin
+  icon: mdi:lightbulb-on
+  url: !secret tasmoadmin_url

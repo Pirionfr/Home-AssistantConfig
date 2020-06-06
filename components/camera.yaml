@@ -1,0 +1,8 @@
+- platform: generic
+  name: Garage Camera
+  still_image_url: !secret camera_garage_still_image_url
+  stream_source: !secret camera_garage_stream_source
+  username: !secret camera_garage_username
+  password: !secret camera_garage_password
+  authentication: basic
+  verify_ssl: false

@@ -1,0 +1,195 @@
+title: Floor plan
+icon: 'mdi:floor-plan'
+cards:
+  - type: picture-elements
+    image: /local/forplan/rdc.png
+    elements:
+      - type: icon
+        icon: 'mdi:flower'
+        entity: plant.yukka
+        style:
+          top: 83%
+          left: 47%
+          --iron-icon-stroke-color: black
+          --iron-icon-fill-color: rgba(0, 111, 0, .75)
+          
+      - type: state-icon
+        entity: light.hue_white_lamp_3
+        tap_action:
+          action: toggle
+        style:
+          top: 68%
+          left: 5%
+          
+      - type: state-icon
+        entity: light.hue_white_lamp_2
+        tap_action:
+          action: toggle
+        style:
+          top: 78%
+          left: 19%
+          
+      - type: state-icon
+        entity: light.hue_white_lamp_1
+        tap_action:
+          action: toggle
+        style:
+          top: 88%
+          left: 5%
+      
+      - type: state-label
+        entity: sensor.temperature_chambre_parentale
+        style:
+          top: 64%
+          left: 19% 
+      - type: state-label
+        entity: sensor.humidite_chambre_parentale
+        style:
+          top: 68%
+          left: 19%              
+          
+      - type: state-label
+        entity: sensor.temperature_salon
+        style:
+          top: 64%
+          left: 80%      
+      - type: state-label
+        entity: sensor.humidite_salon
+        style:
+          top: 68%
+          left: 80%    
+          
+      - type: state-label
+        entity: sensor.temperature_salle_de_bain
+        style:
+          top: 38%
+          left: 15%      
+      - type: state-label
+        entity: sensor.humidite_salle_de_bain
+        style:
+          top: 42%
+          left: 15%
+      
+      - type: icon
+        icon: 'mdi:cast'
+        entity: media_player.salon
+        style:
+          top: 35%
+          left: 70% 
+          
+      - type: icon
+        icon: 'mdi:cast'
+        entity: media_player.vsx_934_0009b0f227ee
+        style:
+          top: 29%
+          left: 70%          
+         
+  - type: picture-elements
+    image: /local/forplan/etage.png
+    elements:
+    
+      - type: icon
+        icon: 'mdi:printer'
+        entity: group.printer
+        style:
+          top: 80%
+          left: 80%
+          
+      - type: state-label
+        entity: sensor.temperature_chambre_noah
+        style:
+          top: 65%
+          left: 50%      
+      - type: state-label
+        entity: sensor.humidite_chambre_noah
+        style:
+          top: 69%
+          left: 50%
+                      
+      - type: state-label
+        entity: sensor.temperature_chambre_soline
+        style:
+          top: 65%
+          left: 15%      
+      - type: state-label
+        entity: sensor.humidite_chambre_soline
+        style:
+          top: 69%
+          left: 15%
+           
+      - type: state-label
+        entity: sensor.temperature_alcove
+        style:
+          top: 6%
+          left: 18%      
+      - type: state-label
+        entity: sensor.humidite_alcove
+        style:
+          top: 10%
+          left: 18%
+    
+  - type: picture-elements
+    image: /local/forplan/sous_sol.png
+    elements:
+        - type: state-icon
+          entity: cover.garage_door
+          style:
+            top: 43%
+            left: 5%
+
+        - type: icon
+          icon: 'mdi:video'
+          entity: camera.garage_camera
+          style:
+            top: 30%
+            left: 45%
+            transform: rotate(170deg)
+            
+        - type: icon
+          icon: 'mdi:clipboard-pulse'
+          entity: sensor.linky
+          style:
+            top: 29%
+            left: 40%
+            --iron-icon-stroke-color: black
+            --iron-icon-fill-color: rgba(255, 255, 0, .75)
+        
+        - type: state-icon
+          tap_action:
+            action: toggle
+          entity: switch.feu_tricolore
+          style:
+            top: 94%
+            left: 30%
+        
+        - type: state-label
+          entity: sensor.temperature_bureau_dimitri
+          style:
+            top: 64%
+            left: 20%      
+        - type: state-label
+          entity: sensor.humidite_bureau_dimitri
+          style:
+            top: 68%
+            left: 20%
+            
+        - type: icon
+          icon: 'mdi:printer-3d'
+          entity: switch.cr10s
+          style:
+            top: 94%
+            left: 10%
+        
+        - type: icon
+          icon: 'mdi:google-home'
+          entity: media_player.bureau
+          style:
+            top: 94%
+            left: 14%
+            
+        - type: icon
+          icon: 'mdi:server'
+          entity: media_player.bureau
+          style:
+            top: 94%
+            left: 5%
