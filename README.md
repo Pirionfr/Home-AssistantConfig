@@ -4,7 +4,7 @@ Here's my [Home Assistant](https://home-assistant.io/) configuration. I have ins
 
 I regularly update my configuration files. You can check my current HA version [here](.HA_VERSION). If you like anything here, Be sure to :star2: my repo!
 
-## Other things that I run on my Server
+## Other things that I run on my server
 
 * [Home Assistant](https://home-assistant.io)
 * [Plex](https://www.plex.tv) media server in a Docker container
