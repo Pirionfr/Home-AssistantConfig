@@ -1,5 +1,7 @@
 # Home Assistant Configuration
 
+[![Build Status](https://travis-ci.org/Pirionfr/Home-AssistantConfig.svg?branch=master)](https://travis-ci.org/Pirionfr/Home-AssistantConfig)
+
 Here's my [Home Assistant](https://home-assistant.io/) configuration. I have installed HA on my personal server with Docker
 
 I regularly update my configuration files. You can check my current HA version [here](.HA_VERSION). If you like anything here, Be sure to :star2: my repo!
