@@ -23,4 +23,15 @@ cards:
       - sensor.speedtest_download
       - sensor.speedtest_upload
       - sensor.speedtest_ping
-  
+
+  - type: entities
+    title: Box Status
+    entities:
+      - sensor.orange_livebox_b_received
+      - sensor.orange_livebox_b_sent
+      - sensor.orange_livebox_kib_s_received
+      - sensor.orange_livebox_kib_s_sent
+      - sensor.orange_livebox_packets_received
+      - sensor.orange_livebox_packets_sent
+      - sensor.orange_livebox_packets_s_received
+      - sensor.orange_livebox_packets_s_sent

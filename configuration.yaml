@@ -14,6 +14,7 @@ homeassistant:
   customize: !include_dir_merge_named customize/
   internal_url: !secret internal_url
   external_url: !secret external_url
+  packages: !include_dir_named packages/
 
 default_config:
 
@@ -28,7 +29,7 @@ frontend:
 lovelace:
   mode: yaml  
 
-panel_iframe: !include panel_iframe.yaml
+panel_iframe: !include panel.yaml
 
 discovery:
 local_ip:
