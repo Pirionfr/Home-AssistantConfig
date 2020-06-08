@@ -1,0 +1,481 @@
+permit_join:
+  description: Allow pairing new device.
+
+refresh_device:
+  description: >
+    Refresh a device by sending many requests to it.
+    Be aware that devices running on battery need to be woken up to answer,
+    typically by pushing the pairing button.
+    You should provide the entity_id OR the addr OR the ieee.
+    If no parameter is provided, every devices will be refreshed.
+  fields:
+    entity_id:
+      description: The device entity_id to refresh
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+
+discover_device:
+  description: >
+    Discover a device by sending many requests to it.
+    Be aware that devices running on battery need to be woken up to answer,
+    typically by pushing the pairing button.
+    You should provide the entity_id OR the addr OR the ieee.
+    If no parameter is provided, every devices will be discovered.
+  fields:
+    entity_id:
+      description: The device entity_id to refresh
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+
+remove_device:
+  description: >
+    Remove a device.
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to remove
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+
+identify_device:
+  description: >
+    Automatically identify a device's destination endpoint.
+    Be aware that devices running on battery need to be woken up to answer,
+    typically by pushing the pairing button.
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+
+raw_command:
+  description: Send a raw command to zigate.
+  fields:
+    cmd:
+      description: Command code
+      example: '0x0092'
+    data:
+      description: Payload in hex format.
+      example: '02af7d010101'
+
+read_attribute:
+  description: >
+    Read attribute from device
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+    cluster:
+      description: Device endpoint cluster.
+      example: '0'
+    attribute_id:
+      description: Attribute ID to read.
+      example: '0xFF0D'
+    manufacturer_code:
+      description: Optional Manufacturer Code.
+      example: '0x115F'
+
+write_attribute:
+  description: >
+    Read attribute from device
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+    cluster:
+      description: Device endpoint cluster.
+      example: '0'
+    attribute_id:
+      description: Attribute ID to write.
+      example: '0xFF0D'
+    value:
+       description: Value to write
+       example: '0x01'
+    attribute_type:
+      description: Attribute type to write.
+      example: '0x20'
+    manufacturer_code:
+      description: Optional Manufacturer Code.
+      example: '0x115F'
+
+add_group:
+  description: >
+    Add group to device
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+    group_addr:
+      description: Optional Group addr, if not specified, generate a random addr.
+      example: '0ab9'
+
+remove_group:
+  description: >
+    Remove group from device
+    You should provide the entity_id OR the addr OR the ieee.
+    if group_addr not specified, remove all groups
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+    group_addr:
+      description: Optional Group addr, if not specified remove all groups.
+      example: '0ab9'
+
+get_group_membership:
+  description: >
+    Get device groups
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+
+action_onoff:
+  description: >
+    Execute action ON/OFF
+    Note that timed onoff and effect are mutually exclusive
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device or the group
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    onoff:
+      description: 0=Off 1=On 2=Toggle
+      example: '1'
+    endpoint:
+      description: Device endpoint (Optional for group addr).
+      example: '1'
+    on_time:
+      description: timed on in sec
+      example: '0'
+    off_time:
+      description: timed off in sec
+      example: '0'
+    effect:
+      description: effect id
+      example: '0'
+    gradient:
+      description: effect gradient
+      example: '0'
+
+ota_load_image:
+  description: >
+    Load ota image file
+  fields:
+    imagepath:
+      description: Path to ota update file.
+      example: '/config/ota/10005777-3.1-TRADFRI-control-outlet-2.0.019.ota.ota.signed'
+
+ota_image_notify:
+  description: >
+    Notify OTA Update
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device.
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    destination_enpoint:
+      description: Optional destination enpoint
+      example: '1'
+    payload_type:
+      description: Optional payload type
+      example: '0'
+
+view_scene:
+  description: >
+    View scene
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    group_addr:
+      description: Group addr
+      example: '0ab9'
+    scene:
+      description: Scene id (int)
+      example: '1'
+
+add_scene:
+  description: >
+    Add scene
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    group_addr:
+      description: Group addr
+      example: '0ab9'
+    scene:
+      description: Scene id (int)
+      example: '1'
+    name:
+      description: Scene name
+      example: 'Blue'
+    transition:
+      description: Transition (optional, default = 0)
+      example: '0'
+
+remove_scene:
+  description: >
+    Remove scene
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    group_addr:
+      description: Group addr
+      example: '0ab9'
+    scene:
+      description: Scene id (Optional) If not specified remove all scenes
+      example: '1'
+
+store_scene:
+  description: >
+    Store scene
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    group_addr:
+      description: Group addr
+      example: '0ab9'
+    scene:
+      description: Scene id (int)
+      example: '1'
+
+recall_scene:
+  description: >
+    Recall scene
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    group_addr:
+      description: Group addr
+      example: '0ab9'
+    scene:
+      description: Scene id (int)
+      example: '1'
+
+scene_membership_request:
+  description: >
+    Scene Membership request
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    group_addr:
+      description: Group addr
+      example: '0ab9'
+
+copy_scene:
+  description: >
+    Copy scene
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    enpoint:
+      description: Enpoint
+      example: '1'
+    from_group_addr:
+      description: Source Group addr
+      example: '0ab9'
+    from_scene:
+      description: Source Scene id
+      example: '1'
+    to_group_addr:
+      description: Destination Group addr
+      example: '0ab9'
+    to_scene:
+      description: Destination Scene id
+      example: '1'
+
+build_network_table:
+  description: >
+    Build a network table.
+  fields:
+    force:
+      description: Force rebuild the table instead of using cache
+      example: true
+
+upgrade_firmware:
+  description: >
+    Upgrade ZiGate firmware
+    If path is not provided, the latest firmware will be downloaded
+    If you're using PiZiGate, the process is fully automatic
+    If you're using USB ZiGate, you have to call zigate.stop_zigate first and put ZiGate in download mode
+    before calling this service
+  fields:
+    path:
+      description: Optional path to firmware file
+      example: '/home/pi/ZiGate_Coordinator.bin'
+
+ias_warning:
+  description: >
+    Execute IAS warning
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device or the group
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+    mode:
+      description: Warning mode stop, burglar, fire, emergency, policepanic, firepanic, emergencypanic
+      example: 'fire'
+    strobe:
+      description: enable strobe
+      example: true
+    level:
+      description: level low, medium, high, veryhigh
+      example: 'low'
+    duration:
+      description: Duration in sec.
+      example: 5
+    strobe_cycle:
+      description: Strobe cycle, 10% step.
+      example: 10
+    strobe_level:
+      description: Strobe level, low, medium, high, veryhigh
+      example: 'low'
+
+ias_squawk:
+  description: >
+    Execute IAS squawk
+    You should provide the entity_id OR the addr OR the ieee.
+  fields:
+    entity_id:
+      description: The device entity_id to identify
+      example: 'zigate.0123456789abcdef'
+    addr:
+      description: ZiGate address of the device or the group
+      example: 'af7d'
+    ieee:
+      description: IEEE address of the device.
+      example: '0123456789abcdef'
+    endpoint:
+      description: Device endpoint.
+      example: '1'
+    mode:
+      description: squawk mode armed or disarmed
+      example: 'armed'
+    strobe:
+      description: enable strobe
+      example: true
+    level:
+      description: strobe level, low, medium, high, veryhigh
+      example: 'low'
