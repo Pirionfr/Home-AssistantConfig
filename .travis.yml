@@ -7,3 +7,5 @@ script:
   - hass -c . --script check_config
 before_install:
   - mv travis_secrets.yaml secrets.yaml
+  - sed '/^  ssl/s//#&/' configuration.yaml > configuration.yaml
+  - sed '/^local_ip/s//#&/' configuration.yaml > configuration.yaml
