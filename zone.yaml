@@ -1,0 +1,9 @@
+- name: !secret work_name
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
+  icon: 'mdi:laptop'
+
+- name: Ecole
+  latitude: !secret ecole_latitude
+  longitude: !secret ecole_longitude
+  icon: 'mdi:school'
