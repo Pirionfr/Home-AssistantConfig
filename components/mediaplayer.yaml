@@ -1,1 +1,6 @@
 - platform: onkyo
+
+- platform: liveboxtvuhd
+  name: Livebox
+  host: !secret liveboxtv
+  scan_interval: 10

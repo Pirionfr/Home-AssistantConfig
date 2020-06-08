@@ -1,0 +1,3 @@
+host: !secret livebox
+username: !secret livebox_username
+password: !secret livebox_password

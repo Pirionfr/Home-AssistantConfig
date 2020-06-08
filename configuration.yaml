@@ -37,6 +37,7 @@ stream:
 conversation:
 upnp:
 tplink:
+livebox: !include components/livebox.yaml
 influxdb: !include components/influxdb.yaml
 rflink: !include components/rflink.yaml
 octoprint: !include components/octoprint.yaml

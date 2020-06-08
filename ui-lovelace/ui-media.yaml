@@ -1,14 +1,17 @@
 title: Multimedia
 icon: 'mdi:play-pause'
 cards:
-  - type: media-control
+  - type: custom:mini-media-player
     entity: media_player.bureau
     
-  - type: media-control
+  - type: custom:mini-media-player
     entity: media_player.salon
     
-  - type: media-control
+  - type: custom:mini-media-player
     entity: media_player.spotify_pirionfr
     
-  - type: media-control
+  - type: custom:mini-media-player
     entity: media_player.vsx_934_0009b0f227ee
+
+  - type: custom:mini-media-player
+    entity: media_player.livebox
