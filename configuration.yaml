@@ -27,7 +27,7 @@ frontend:
   javascript_version: auto
 
 lovelace:
-  mode: yaml  
+  mode: yaml
 
 panel_iframe: !include panel.yaml
 
@@ -37,6 +37,7 @@ stream:
 conversation:
 upnp:
 tplink:
+zha_map:
 livebox: !include components/livebox.yaml
 influxdb: !include components/influxdb.yaml
 rflink: !include components/rflink.yaml
@@ -45,7 +46,6 @@ spotify: !include components/spotify.yaml
 sabnzbd: !include components/sabnzbd.yaml
 speedtestdotnet: !include components/speedtestdotnet.yaml
 calendar: !include components/calendar.yaml
-zigate: !include components/zigate.yaml
 hue: !include components/hue.yaml
 mqtt: !include components/mqtt.yaml
 tts: !include components/tts.yaml

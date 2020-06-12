@@ -161,6 +161,14 @@ cards:
           style:
             top: 94%
             left: 30%
+
+        - type: state-icon
+          entity: light.ikea_of_sweden_tradfri_bulb_e27_ww_806lm_9beaeafe_level_on_off
+          tap_action:
+            action: toggle
+          style:
+            top: 78%
+            left: 19%
         
         - type: state-label
           entity: sensor.temperature_bureau_dimitri

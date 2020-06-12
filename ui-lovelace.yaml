@@ -9,6 +9,10 @@ resources:
     type: module
   - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
     type: module
+  - url: /hacsfiles/zha-network-card/zha-network-card.js
+    type: module
+  - url: /local/custom_ui/zha-network-visualization-card.js
+    type: module
 
 
 views:
@@ -18,4 +22,5 @@ views:
   - !include ui-lovelace/ui-media.yaml
   - !include ui-lovelace/ui-security.yaml
   - !include ui-lovelace/ui-network.yaml
+  - !include ui-lovelace/ui-zha.yaml
 
