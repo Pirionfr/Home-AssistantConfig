@@ -1,0 +1,77 @@
+- alias: 'Turn On bureau'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: switch_test
+      event: 1002
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.bureau_dimitri
+
+- alias: 'Turn Off Bedroom from dimmer'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: switch_test
+      event: 2002
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.bureau_dimitri
+
+- alias: 'Increase brightness Bedroom from dimmer'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: switch_test
+      event: 1001
+  action:
+    - service: deconz.configure
+      data:
+        entity: light.bureau_dimitri
+        field: "/state"
+        data: {"bri_inc":254, "transitiontime":50}
+
+- alias: 'Decrease brightness Bedroom from dimmer'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: switch_test
+      event: 2001
+  action:
+    - service: deconz.configure
+      data:
+        entity: light.bureau_dimitri
+        field: "/state"
+        data: {"bri_inc":-254, "transitiontime":50}
+
+- alias: 'Stop brightness Bedroom from dimmer'
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_test
+        event: 2003
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_test
+        event: 1003
+  action:
+    - service: deconz.configure
+      data:
+        entity: light.bureau_dimitri
+        field: "/state"
+        data: {"bri_inc":0}
+

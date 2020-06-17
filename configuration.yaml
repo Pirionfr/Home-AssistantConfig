@@ -29,7 +29,7 @@ frontend:
 lovelace:
   mode: yaml
 
-panel_iframe: !include panel.yaml
+panel_iframe: !include lovelace/panel.yaml
 
 discovery:
 local_ip:
@@ -37,7 +37,6 @@ stream:
 conversation:
 upnp:
 tplink:
-zha_map:
 livebox: !include components/livebox.yaml
 influxdb: !include components/influxdb.yaml
 rflink: !include components/rflink.yaml

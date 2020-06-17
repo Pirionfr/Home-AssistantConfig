@@ -15,12 +15,15 @@ I regularly update my configuration files. You can check my current HA version [
 
 
 ## Some of the devices and services that I use with HA
-  * [PiZiGate](https://zigate.fr/produit/pizigate-v1-0/) for Zigbee control on a RPI 1
+  * [raspbee2](https://phoscon.de/en/raspbee2) for raspbee2 control on a RPI 1
   * [RFlink Gateway 433](https://www.nodo-shop.nl/nl/46-rflink-433920-mhz) for all 433 Mhz device on RPI Zero W
   * [Rflink 868](https://www.nodo-shop.nl/nl/rflink-gateway/168-rflink-868-arduino-antenne-usb-kabel.html) for all 868 MHz Device with nodemcu V3
   * [RPi Zero W](https://raspberry-pi.fr/raspberry-pi-zero-w/) for BLE sensor with BLE to MQTT
   * Lights and Switches
-    * [Hue lights](https://www2.meethue.com/fr-fr/p/hue-white-pack-de-1-e27/8718696785317)
+    * [Hue lights](https://www2.meethue.com/fr-fr/p/hue-white-pack-de-1-e27/8718696785317) X3
+    * [Hue Dimmer](https://www2.meethue.com/fr-fr/p/hue-variateur/8718696743157)
+    * [Ikea TRÅDFRI light](https://www.ikea.com/fr/fr/p/tradfri-ampoule-led-e27-806-lumen-sans-fil-a-variateur-dintensite-blanc-chaud-blanc-chaud-globe-opalin-90408797/) X4
+    * [Ikea TRÅDFRI switch on/off](https://www.ikea.com/fr/fr/p/tradfri-variateur-dintensite-sans-fil-blanc-70408595/) X4
     * [OpenGarage](https://opengarage.io)
   * Voice Interaction    
     * [Google Home](https://store.google.com/product/google_home), with the [Google Assistant](https://home-assistant.io/components/google_assistant/)
@@ -30,7 +33,7 @@ I regularly update my configuration files. You can check my current HA version [
     * [Google Cast](https://home-assistant.io/components/media_player.cast/) on my Xiaomi mi box s
   * Weather and Climate related
     * WH2 Sensor
-    * Xiaomi Mijia Bluetooth thermomètre 2
+    * Xiaomi Mijia Bluetooth thermomètre x4
     * [openweathermap](https://www.home-assistant.io/integrations/openweathermap/) for weather data and forecasts
   * Plant Sensor
     * Xiaomi Plant Monitor
