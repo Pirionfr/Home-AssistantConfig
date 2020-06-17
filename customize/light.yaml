@@ -1,11 +1,13 @@
-light.hue_white_lamp_1:
-  friendly_name: Chevet Gauche
-light.hue_white_lamp_2:
-  friendly_name: Luminaire
-  icon: mdi:ceiling-light
-light.hue_white_lamp_3:
-  friendly_name: Chevet Droit
+light.chevet_gauche:
+  friendly_name: Chevet Gauche chambre parental
 
-light.ikea_of_sweden_tradfri_bulb_e27_ww_806lm_9beaeafe_level_on_off:
-  friendly_name: Luminaire
+light.luminaire_chambre_parental:
+  friendly_name: Luminaire chambre parental
+  icon: mdi:ceiling-light
+
+light.hue_white_lamp_3:
+  friendly_name: Chevet Droit chambre parental
+
+light.bureau_dimitri:
+  friendly_name: Luminaire Bureau
   icon: mdi:ceiling-light

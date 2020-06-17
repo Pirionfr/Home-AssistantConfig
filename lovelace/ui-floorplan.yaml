@@ -22,7 +22,7 @@ cards:
           left: 5%
           
       - type: state-icon
-        entity: light.hue_white_lamp_2
+        entity: light.luminaire_chambre_parental
         tap_action:
           action: toggle
         style:
@@ -30,7 +30,7 @@ cards:
           left: 19%
           
       - type: state-icon
-        entity: light.hue_white_lamp_1
+        entity: light.chevet_gauche
         tap_action:
           action: toggle
         style:
@@ -163,7 +163,7 @@ cards:
             left: 30%
 
         - type: state-icon
-          entity: light.ikea_of_sweden_tradfri_bulb_e27_ww_806lm_9beaeafe_level_on_off
+          entity: light.bureau_dimitri
           tap_action:
             action: toggle
           style:

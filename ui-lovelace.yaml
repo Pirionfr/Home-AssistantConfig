@@ -1,3 +1,5 @@
+
+
 resources:
   - url: /local/custom_ui/linky-card.js?v=0
     type: js
@@ -9,18 +11,13 @@ resources:
     type: module
   - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
     type: module
-  - url: /hacsfiles/zha-network-card/zha-network-card.js
-    type: module
-  - url: /local/custom_ui/zha-network-visualization-card.js
-    type: module
 
 
 views:
-  - !include ui-lovelace/ui-floorplan.yaml
-  - !include ui-lovelace/ui-home.yaml
-  - !include ui-lovelace/ui-weather.yaml
-  - !include ui-lovelace/ui-media.yaml
-  - !include ui-lovelace/ui-security.yaml
-  - !include ui-lovelace/ui-network.yaml
-  - !include ui-lovelace/ui-zha.yaml
+  - !include lovelace/ui-floorplan.yaml
+  - !include lovelace/ui-home.yaml
+  - !include lovelace/ui-weather.yaml
+  - !include lovelace/ui-media.yaml
+  - !include lovelace/ui-security.yaml
+  - !include lovelace/ui-network.yaml
 
