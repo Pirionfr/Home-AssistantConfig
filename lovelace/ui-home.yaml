@@ -60,13 +60,13 @@ cards:
                 font_size: 75
           - type: glance
             entities:
-              - entity: light.hue_white_lamp_3
+              - entity: light.chevet_gauche
                 tap_action:
                   action: toggle
-              - entity: light.hue_white_lamp_2
+              - entity: light.luminaire_chambre_parental
                 tap_action:
                   action: toggle
-              - entity: light.hue_white_lamp_1
+              - entity: light.chevet_gauche
                 tap_action:
                   action: toggle
 
@@ -182,6 +182,9 @@ cards:
           - type: glance
             entities:
               - entity: switch.feu_tricolore
+                tap_action:
+                  action: toggle
+              - entity: light.bureau_dimitri
                 tap_action:
                   action: toggle
 

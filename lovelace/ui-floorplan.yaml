@@ -14,7 +14,7 @@ cards:
           --iron-icon-fill-color: rgba(0, 111, 0, .75)
           
       - type: state-icon
-        entity: light.hue_white_lamp_3
+        entity: light.chevet_droit
         tap_action:
           action: toggle
         style:
