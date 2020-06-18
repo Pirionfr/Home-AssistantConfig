@@ -1,4 +1,4 @@
-- alias: 'Turn On bureau'
+- alias: 'Turn On desk'
   initial_state: 'on'
   trigger:
     platform: event
@@ -12,7 +12,7 @@
         entity_id:
           - light.bureau_dimitri
 
-- alias: 'Turn Off bureau from dimmer'
+- alias: 'Turn Off desk from dimmer'
   initial_state: 'on'
   trigger:
     platform: event
@@ -25,7 +25,7 @@
       entity_id:
         - light.bureau_dimitri
 
-- alias: 'Increase brightness bureau from dimmer'
+- alias: 'Increase brightness desk from dimmer'
   initial_state: 'on'
   trigger:
     platform: event
@@ -40,7 +40,7 @@
         field: "/state"
         data: {"bri_inc":254, "transitiontime":50}
 
-- alias: 'Decrease brightness bureau from dimmer'
+- alias: 'Decrease brightness desk from dimmer'
   initial_state: 'on'
   trigger:
     platform: event
@@ -55,7 +55,7 @@
         field: "/state"
         data: {"bri_inc":-254, "transitiontime":50}
 
-- alias: 'Stop brightness bureau from dimmer'
+- alias: 'Stop brightness desk from dimmer'
   initial_state: 'on'
   trigger:
     - platform: event
