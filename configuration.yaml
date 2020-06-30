@@ -39,14 +39,11 @@ upnp:
 tplink:
 livebox: !include components/livebox.yaml
 influxdb: !include components/influxdb.yaml
-rflink: !include components/rflink.yaml
 octoprint: !include components/octoprint.yaml
 spotify: !include components/spotify.yaml
 sabnzbd: !include components/sabnzbd.yaml
 speedtestdotnet: !include components/speedtestdotnet.yaml
 calendar: !include components/calendar.yaml
-hue: !include components/hue.yaml
-mqtt: !include components/mqtt.yaml
 tts: !include components/tts.yaml
 media_player: !include components/mediaplayer.yaml
 camera: !include components/camera.yaml

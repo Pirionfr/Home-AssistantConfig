@@ -14,6 +14,14 @@ cards:
           --iron-icon-fill-color: rgba(0, 111, 0, .75)
           
       - type: state-icon
+        entity: switch.on_off_plug_in_unit_8
+        tap_action:
+          action: toggle
+        style:
+          top: 80%
+          left: 60%
+          
+      - type: state-icon
         entity: light.chevet_droit
         tap_action:
           action: toggle
@@ -38,37 +46,48 @@ cards:
           left: 5%
       
       - type: state-label
-        entity: sensor.temperature_chambre_parentale
+        entity: sensor.chambre_parental_temperature
         style:
           top: 64%
           left: 19% 
       - type: state-label
-        entity: sensor.humidite_chambre_parentale
+        entity: sensor.chambre_parental_humidity
         style:
           top: 68%
           left: 19%              
           
       - type: state-label
-        entity: sensor.temperature_salon
+        entity: sensor.salon_temperature
         style:
           top: 64%
           left: 80%      
       - type: state-label
-        entity: sensor.humidite_salon
+        entity: sensor.salon_humidity
         style:
           top: 68%
           left: 80%    
           
       - type: state-label
-        entity: sensor.temperature_salle_de_bain
+        entity: sensor.salle_de_bain_temperature
         style:
           top: 38%
           left: 15%      
       - type: state-label
-        entity: sensor.humidite_salle_de_bain
+        entity: sensor.salle_de_bain_humidity
         style:
           top: 42%
           left: 15%
+      
+      - type: state-label
+        entity: sensor.cuisine_temperature
+        style:
+          top: 5%
+          left: 20%      
+      - type: state-label
+        entity: sensor.cuisine_humidity
+        style:
+          top: 9%
+          left: 20%
       
       - type: icon
         icon: 'mdi:cast'
@@ -96,34 +115,34 @@ cards:
           left: 80%
           
       - type: state-label
-        entity: sensor.temperature_chambre_noah
+        entity: sensor.chambre_noah_temperature
         style:
           top: 65%
           left: 50%      
       - type: state-label
-        entity: sensor.humidite_chambre_noah
+        entity: sensor.chambre_noah_humidity
         style:
           top: 69%
           left: 50%
                       
       - type: state-label
-        entity: sensor.temperature_chambre_soline
+        entity: sensor.chambre_soline_temperature
         style:
           top: 65%
           left: 15%      
       - type: state-label
-        entity: sensor.humidite_chambre_soline
+        entity: sensor.chambre_soline_humidity
         style:
           top: 69%
           left: 15%
            
       - type: state-label
-        entity: sensor.temperature_alcove
+        entity: sensor.alcove_temperature
         style:
           top: 6%
           left: 18%      
       - type: state-label
-        entity: sensor.humidite_alcove
+        entity: sensor.alcove_humidity
         style:
           top: 10%
           left: 18%
@@ -133,6 +152,7 @@ cards:
     elements:
         - type: state-icon
           entity: cover.garage_door
+          state_color: false
           style:
             top: 43%
             left: 5%
@@ -153,14 +173,6 @@ cards:
             left: 40%
             --iron-icon-stroke-color: black
             --iron-icon-fill-color: rgba(255, 255, 0, .75)
-        
-        - type: state-icon
-          tap_action:
-            action: toggle
-          entity: switch.feu_tricolore
-          style:
-            top: 94%
-            left: 30%
 
         - type: state-icon
           entity: light.bureau_dimitri
@@ -171,12 +183,12 @@ cards:
             left: 19%
         
         - type: state-label
-          entity: sensor.temperature_bureau_dimitri
+          entity: sensor.bureau_temperature
           style:
             top: 64%
             left: 20%      
         - type: state-label
-          entity: sensor.humidite_bureau_dimitri
+          entity: sensor.bureau_humidity
           style:
             top: 68%
             left: 20%

@@ -19,7 +19,7 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_salon
+                  - sensor.salon_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
@@ -27,7 +27,7 @@ cards:
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_salon
+                  - sensor.salon_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
@@ -47,14 +47,14 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_chambre_parentale
+                  - sensor.chambre_parental_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_chambre_parentale
+                  - sensor.chambre_parental_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
@@ -78,14 +78,14 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_salle_de_bain
+                  - sensor.salle_de_bain_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_salle_de_bain
+                  - sensor.salle_de_bain_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
@@ -101,14 +101,14 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_chambre_noah
+                  - sensor.chambre_noah_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_chambre_noah
+                  - sensor.chambre_noah_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
@@ -121,14 +121,14 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_chambre_soline
+                  - sensor.chambre_soline_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_chambre_soline
+                  - sensor.chambre_soline_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
@@ -142,19 +142,17 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_alcove
+                  - sensor.alcove_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_alcove
+                  - sensor.alcove_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-
-
             
   - type: vertical-stack
     title: Sous-sol
@@ -167,30 +165,20 @@ cards:
               - type: custom:mini-graph-card
                 name: Température
                 entities:
-                  - sensor.temperature_bureau_dimitri
+                  - sensor.bureau_temperature
                 line_color: blue
                 line_width: 8
                 font_size: 75
               - type: custom:mini-graph-card
                 name: Humidité
                 entities:
-                  - sensor.humidite_bureau_dimitri
+                  - sensor.bureau_humidity
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
 
-          - type: glance
-            entities:
-              - entity: switch.feu_tricolore
-                tap_action:
-                  action: toggle
-              - entity: light.bureau_dimitri
-                tap_action:
-                  action: toggle
-
           - type: custom:mini-media-player
             entity: media_player.bureau
-
 
       - type: vertical-stack
         title: Garage

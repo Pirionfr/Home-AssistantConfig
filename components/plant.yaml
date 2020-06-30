@@ -1,10 +1,10 @@
 yukka:
     sensors:
-      moisture: sensor.yukka_moisture
-      battery: sensor.yukka_battery
-      temperature: sensor.yukka_temperature
-      conductivity: sensor.yukka_conductivity
-      brightness: sensor.yukka_light
+      moisture: sensor.yukka_moisture_2
+      battery: sensor.yukka_battery_level
+      temperature: sensor.yukka_temperature_2
+      conductivity: sensor.yukka_soil_conductivity
+      brightness: sensor.yukka_illuminance
     min_moisture: 20
     max_moisture: 60
     min_battery: 17

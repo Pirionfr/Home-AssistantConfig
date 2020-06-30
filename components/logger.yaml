@@ -1,4 +1,1 @@
 default: error
-#  logs:
-#    rflink: debug
-#    homeassistant.components.rflink: debug

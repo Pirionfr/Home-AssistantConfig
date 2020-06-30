@@ -1,0 +1,4 @@
+#deconz:
+#    title: 'deCONZ'
+#    url: 'http://192.168.0.35/pwa/index.html'
+#    require_admin: true

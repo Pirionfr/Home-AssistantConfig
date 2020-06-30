@@ -1,2 +1,0 @@
-port: 6000
-host: !secret rflink

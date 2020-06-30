@@ -1,0 +1,97 @@
+esphome:
+  name: esp32_ble_tracker
+  platform: ESP32
+  board: esp-wrover-kit
+
+wifi:
+  networks:
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_password
+    - ssid: !secret wifi_ext_ssid
+      password: !secret wifi_ext_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+esp32_ble_tracker:
+
+sensor:
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:14:C4:4A
+    bindkey: !secret A4C13814C44A
+    temperature:
+      name: "Salon Temperature"
+    humidity:
+      name: "Salon humidity"
+      
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:4A:12:0F
+    bindkey: !secret A4C1384A120F
+    temperature:
+      name: "chambre parental Temperature"
+    humidity:
+      name: "chambre parental humidity"
+      
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:CA:E8:05
+    bindkey: !secret A4C138CAE805
+    temperature:
+      name: "salle de bain Temperature"
+    humidity:
+      name: "salle de bain humidity"
+      
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:75:A2:73
+    bindkey: !secret A4C13875A273
+    temperature:
+      name: "chambre Soline Temperature"
+    humidity:
+      name: "chambre Soline humidity"     
+  
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:4A:83:57
+    bindkey: !secret A4C1384A8357
+    temperature:
+      name: "chambre Noah Temperature"
+    humidity:
+      name: "chambre Noah humidity" 
+
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:07:F9:89
+    bindkey: !secret A4C13807F989
+    temperature:
+      name: "alcove Temperature"
+    humidity:
+      name: "alcove humidity"
+  
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:2C:5F:63
+    bindkey: !secret A4C1382C5F63
+    temperature:
+      name: "bureau Temperature"
+    humidity:
+      name: "bureau humidity"
+      
+  - platform: xiaomi_lywsd03mmc
+    mac_address: A4:C1:38:EE:B9:F8
+    bindkey: !secret A4C138EEB9F8
+    temperature:
+      name: "Cuisine Temperature"
+    humidity:
+      name: "Cuisine humidity"
+      
+  - platform: xiaomi_hhccjcy01
+    mac_address: C4:7C:8D:6A:04:0D
+    temperature:
+      name: "Yukka Temperature"
+    moisture:
+      name: "Yukka Moisture"
+    illuminance:
+      name: "Yukka Illuminance"
+    conductivity:
+      name: "Yukka Soil Conductivity"

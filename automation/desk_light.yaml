@@ -1,5 +1,5 @@
 - alias: 'Turn On desk'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: event
     event_type: deconz_event
@@ -13,7 +13,7 @@
           - light.bureau_dimitri
 
 - alias: 'Turn Off desk from dimmer'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: event
     event_type: deconz_event
@@ -26,7 +26,7 @@
         - light.bureau_dimitri
 
 - alias: 'Increase brightness desk from dimmer'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: event
     event_type: deconz_event
@@ -41,7 +41,7 @@
         data: {"bri_inc":254, "transitiontime":50}
 
 - alias: 'Decrease brightness desk from dimmer'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: event
     event_type: deconz_event
@@ -56,7 +56,7 @@
         data: {"bri_inc":-254, "transitiontime":50}
 
 - alias: 'Stop brightness desk from dimmer'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     - platform: event
       event_type: deconz_event

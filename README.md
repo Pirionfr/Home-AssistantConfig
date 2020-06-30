@@ -16,9 +16,8 @@ I regularly update my configuration files. You can check my current HA version [
 
 ## Some of the devices and services that I use with HA
   * [raspbee2](https://phoscon.de/en/raspbee2) for raspbee2 control on a RPI 1
-  * [RFlink Gateway 433](https://www.nodo-shop.nl/nl/46-rflink-433920-mhz) for all 433 Mhz device on RPI Zero W
+  * [D1 Mini ESP32 ](https://www.amazon.fr/ESP-32S-Bluetooth-Esp8266-CP2102-Module/dp/B07NW8S1ZR) for all BLE devices
   * [Rflink 868](https://www.nodo-shop.nl/nl/rflink-gateway/168-rflink-868-arduino-antenne-usb-kabel.html) for all 868 MHz Device with nodemcu V3
-  * [RPi Zero W](https://raspberry-pi.fr/raspberry-pi-zero-w/) for BLE sensor with BLE to MQTT
   * Lights and Switches
     * [Hue lights](https://www2.meethue.com/fr-fr/p/hue-white-pack-de-1-e27/8718696785317) X3
     * [Hue Dimmer](https://www2.meethue.com/fr-fr/p/hue-variateur/8718696743157)
@@ -32,8 +31,7 @@ I regularly update my configuration files. You can check my current HA version [
     * [Plex activity monitor](https://home-assistant.io/components/sensor.plex/) to track my PMS.
     * [Google Cast](https://home-assistant.io/components/media_player.cast/) on my Xiaomi mi box s
   * Weather and Climate related
-    * WH2 Sensor
-    * Xiaomi Mijia Bluetooth thermomètre x4
+    * Xiaomi Mijia Bluetooth thermomètre V2 x8
     * [openweathermap](https://www.home-assistant.io/integrations/openweathermap/) for weather data and forecasts
   * Plant Sensor
     * Xiaomi Plant Monitor

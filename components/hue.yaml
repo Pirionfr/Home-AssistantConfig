@@ -1,2 +1,0 @@
-bridges:
-  - host: !secret hue_bridge
