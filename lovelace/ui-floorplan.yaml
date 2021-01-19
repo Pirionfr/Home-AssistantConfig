@@ -4,6 +4,12 @@ cards:
   - type: picture-elements
     image: /local/forplan/rdc.png
     elements:
+      - type: state-icon
+        entity: cover.window_covering_device_2
+        state_color: false
+        style:
+          top: 94%
+          left: 74%
       - type: icon
         icon: 'mdi:flower'
         entity: plant.yukka
@@ -14,12 +20,20 @@ cards:
           --iron-icon-fill-color: rgba(0, 111, 0, .75)
           
       - type: state-icon
-        entity: switch.on_off_plug_in_unit_8
+        entity: switch.luminaire_salle_a_manger
         tap_action:
           action: toggle
         style:
           top: 80%
           left: 60%
+          
+      - type: state-icon
+        entity: light.dimmable_light_5
+        tap_action:
+          action: toggle
+        style:
+          top: 38%
+          left: 83%
           
       - type: state-icon
         entity: light.chevet_droit
@@ -181,7 +195,15 @@ cards:
           style:
             top: 78%
             left: 19%
-        
+            
+        - type: state-icon
+          entity: switch.feu_tricolore
+          tap_action:
+            action: toggle
+          style:
+            top: 78%
+            left: 7%    
+            
         - type: state-label
           entity: sensor.bureau_temperature
           style:

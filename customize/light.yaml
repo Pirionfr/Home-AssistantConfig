@@ -11,3 +11,11 @@ light.hue_white_lamp_3:
 light.bureau_dimitri:
   friendly_name: Luminaire Bureau
   icon: mdi:ceiling-light
+  
+light.dimmable_light_5:
+  friendly_name: Luminaire Salon
+  icon: mdi:ceiling-light
+
+switch.luminaire_salle_a_manger:
+  friendly_name: Luminaire Salle à manger
+  icon: mdi:ceiling-light

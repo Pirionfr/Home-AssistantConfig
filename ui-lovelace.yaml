@@ -1,11 +1,11 @@
 
 
 resources:
-  - url: /local/custom_ui/linky-card.js?v=0
+  - url: /local/custom_ui/linky-card.js?
     type: js
-  - url: /local/custom_ui/ext-weblink.js?v=0
+  - url: /local/custom_ui/ext-weblink.js?
     type: js
-  - url: /local/custom_ui/owntrack-card.js?v=0
+  - url: /local/custom_ui/owntrack-card.js?
     type: js
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
     type: module

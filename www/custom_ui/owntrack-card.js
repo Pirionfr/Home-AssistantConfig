@@ -1,10 +1,9 @@
 class OwntrackCard extends HTMLElement {
   set hass(hass) {
-	var entities = this.config.entities  
-    var state = hass.states[entities[0]];
-    var attributes = state.attributes;
+    const state = hass.states[this.config.entities[0]];
+    const attributes = state.attributes;
 	
-	var battery = hass.states[entities[1]]
+    const battery = hass.states[this.config.entities[1]];
 	
 		
     this.innerHTML = `

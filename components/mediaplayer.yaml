@@ -4,3 +4,6 @@
   name: Livebox
   host: !secret liveboxtv
   scan_interval: 10
+  
+- platform: snapcast
+  host: !secret orb

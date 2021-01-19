@@ -12,18 +12,20 @@ I regularly update my configuration files. You can check my current HA version [
 * [Plex](https://www.plex.tv) media server in a Docker container
 * [murmur](https://wiki.mumble.info) Mumble server
 * [Octoprint](https://octoprint.org) Web interface for 3D printer
+* [Snapserver](https://github.com/badaix/snapcast)Synchronous multiroom audio player 
 
 
 ## Some of the devices and services that I use with HA
-  * [raspbee2](https://phoscon.de/en/raspbee2) for raspbee2 control on a RPI 1
-  * [D1 Mini ESP32 ](https://www.amazon.fr/ESP-32S-Bluetooth-Esp8266-CP2102-Module/dp/B07NW8S1ZR) for all BLE devices
-  * [Rflink 868](https://www.nodo-shop.nl/nl/rflink-gateway/168-rflink-868-arduino-antenne-usb-kabel.html) for all 868 MHz Device with nodemcu V3
+  * [conbee II](https://phoscon.de/en/conbee2) 
+  * [D1 Mini ESP32](https://www.amazon.fr/ESP-32S-Bluetooth-Esp8266-CP2102-Module/dp/B07NW8S1ZR) for all BLE devices
   * Lights and Switches
     * [Hue lights](https://www2.meethue.com/fr-fr/p/hue-white-pack-de-1-e27/8718696785317) X3
     * [Hue Dimmer](https://www2.meethue.com/fr-fr/p/hue-variateur/8718696743157)
     * [Ikea TRÅDFRI light](https://www.ikea.com/fr/fr/p/tradfri-ampoule-led-e27-806-lumen-sans-fil-a-variateur-dintensite-blanc-chaud-blanc-chaud-globe-opalin-90408797/) X4
     * [Ikea TRÅDFRI switch on/off](https://www.ikea.com/fr/fr/p/tradfri-variateur-dintensite-sans-fil-blanc-70408595/) X4
+  * Cover
     * [OpenGarage](https://opengarage.io)
+    * [Dooxie with Netatmo wired connected switch for roller shutter](https://www.legrand.fr/pro/catalogue/42798-version-dooxie-with-netatmo/interrupteur-filaire-connecte-dooxie-with-netatmo-pour-volet-roulant-blanc) x1
   * Voice Interaction    
     * [Google Home](https://store.google.com/product/google_home), with the [Google Assistant](https://home-assistant.io/components/google_assistant/)
   * Media

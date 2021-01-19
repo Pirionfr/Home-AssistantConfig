@@ -1,0 +1,21 @@
+- alias: ouvrir volet
+  description: 'ouvrir volet'
+  trigger:
+  - platform: sun
+    event: sunrise
+  action:
+  - service: cover.open_cover
+    data: {}
+    entity_id: 
+    - cover.window_covering_device_2
+    
+- alias: fermer volet
+  description: 'fermer volet'
+  trigger:
+  - platform: sun
+    event: sunset
+  action:
+  - service: cover.close_cover
+    data: {}
+    entity_id: 
+    - cover.window_covering_device_2

@@ -40,6 +40,15 @@ cards:
             entity: plant.yukka
 
       - type: vertical-stack
+        title: Salle à manger
+        cards:
+          - type: glance
+            entities:
+              - entity: switch.luminaire_salle_a_manger
+                tap_action:
+                  action: toggle
+
+      - type: vertical-stack
         title: Chambre Parentale
         cards:
           - type: horizontal-stack

@@ -3,6 +3,9 @@
 lib
 deps
 tts
+octoprint
+**/__pycache__
+
 
 *.pid
 *.xml
@@ -13,8 +16,12 @@ tts
 *.log
 *.conf
 *.sqlite
+.shopping_list.json
+
 
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+
 /www/photo
+

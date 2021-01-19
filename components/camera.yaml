@@ -6,3 +6,4 @@
   password: !secret camera_garage_password
   authentication: basic
   verify_ssl: false
+  scan_interval: 5

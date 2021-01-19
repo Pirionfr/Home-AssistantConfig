@@ -19,7 +19,9 @@ api:
 ota:
 
 esp32_ble_tracker:
-
+ scan_parameters:
+    window: 160ms
+    
 sensor:
   - platform: xiaomi_lywsd03mmc
     mac_address: A4:C1:38:14:C4:4A

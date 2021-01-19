@@ -7,13 +7,13 @@ cards:
       - type: 'custom:owntrack-card'
         entities: 
           - device_tracker.oneplus_a6010
-          - sensor.oneplus_a6010_battery_level
+          - sensor.oneplus_a6010_niveau_de_batterie
         image: '/local/photo/dim.png'
         
       - type: 'custom:owntrack-card'
         entities: 
-          - device_tracker.dli_l22
-          - sensor.dli_l22_battery_level
+          - device_tracker.patoo
+          - sensor.patoo_niveau_de_batterie
         image: '/local/photo/patoo.png'
     
   - type: map
@@ -21,7 +21,7 @@ cards:
     default_zoom: 10
     entities:
       - device_tracker.oneplus_a6010
-      - device_tracker.dli_l22
+      - device_tracker.patoo
       - zone.home
       - zone.ovh
       - zone.ecole

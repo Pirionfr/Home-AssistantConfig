@@ -1,10 +1,11 @@
 """Support for the Livebox platform."""
 import logging
+from datetime import datetime, timedelta
 
 from homeassistant.components.device_tracker import SOURCE_TYPE_ROUTER
 from homeassistant.components.device_tracker.config_entry import ScannerEntity
 
-from . import COORDINATOR, DOMAIN, LIVEBOX_ID
+from . import CONF_TRACKING_TIMEOUT, COORDINATOR, DOMAIN, LIVEBOX_ID
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -14,11 +15,13 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
     datas = hass.data[DOMAIN][config_entry.entry_id]
     box_id = datas[LIVEBOX_ID]
     coordinator = datas[COORDINATOR]
+    timeout = datas[CONF_TRACKING_TIMEOUT]
 
     device_trackers = coordinator.data["devices"]
     entities = [
-        LiveboxDeviceScannerEntity(key, box_id, coordinator)
-        for key, device in device_trackers.items() if "IPAddress" and "PhysAddress" in device
+        LiveboxDeviceScannerEntity(key, box_id, coordinator, timeout)
+        for key, device in device_trackers.items()
+        if "IPAddress" and "PhysAddress" in device
     ]
     async_add_entities(entities, True)
 
@@ -26,13 +29,14 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
 class LiveboxDeviceScannerEntity(ScannerEntity):
     """Represent a tracked device."""
 
-    def __init__(self, key, bridge_id, coordinator):
+    def __init__(self, key, bridge_id, coordinator, timeout):
         """Initialize the device tracker."""
-        self.box_id = id
+        self.box_id = bridge_id
         self.coordinator = coordinator
         self.key = key
-        self._device = self.coordinator.data["devices"].get(self.key)
-        # self._retry = 0
+        self._device = self.coordinator.data.get("devices", {}).get(self.key, {})
+        self._timeout_tracking = timeout
+        self._old_status = datetime.today()
 
     @property
     def name(self):
@@ -47,7 +51,18 @@ class LiveboxDeviceScannerEntity(ScannerEntity):
     @property
     def is_connected(self):
         """Return true if the device is connected to the network."""
-        return self.coordinator.data["devices"].get(self.key).get("Active") is True
+        status = (
+            self.coordinator.data.get("devices", {}).get(self.key, {}).get("Active")
+        )
+        if status is True:
+            self._old_status = datetime.today() + timedelta(
+                seconds=self._timeout_tracking
+            )
+        if status is False and self._old_status > datetime.today():
+            _LOGGER.debug("%s will be disconnected at %s", self.name, self._old_status)
+            return True
+
+        return status
 
     @property
     def source_type(self):
@@ -66,7 +81,7 @@ class LiveboxDeviceScannerEntity(ScannerEntity):
     @property
     def device_state_attributes(self):
         """Return the device state attributes."""
-        _device = self.coordinator.data["devices"].get(self.key)
+        _device = self.coordinator.data["devices"].get(self.key, {})
         _attributs = {
             "ip_address": _device.get("IPAddress"),
             "first_seen": _device.get("FirstSeen"),
@@ -94,21 +109,3 @@ class LiveboxDeviceScannerEntity(ScannerEntity):
     async def async_update(self) -> None:
         """Update WLED entity."""
         await self.coordinator.async_request_refresh()
-
-    # ~ @Throttle(SCAN_INTERVAL)
-    # ~ async def async_update(self):
-    # ~ """Handle polling."""
-    # ~ data_status = await self._bridge.async_get_device(self.unique_id)
-    # ~ if data_status:
-    # ~ self._device = data_status
-    # ~ if self._device.get("Active") is False and self._retry < 2:
-    # ~ self._retry += 1
-    # ~ self._device["Active"] = True
-    # ~ elif self._device.get("Active") is False and self._retry == 2:
-    # ~ self._device["Active"] = False
-    # ~ else:
-    # ~ self._retry = 0
-    # ~ self._device["Active"] = True
-    # ~ _LOGGER.debug(
-    # ~ f"Update {self.name} - {self.unique_id} - {self._retry} - {self._device['Active']}"
-    # ~ )

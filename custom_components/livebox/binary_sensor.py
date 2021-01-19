@@ -1,5 +1,6 @@
 """Livebox binary sensor entities."""
 import logging
+from datetime import datetime, timedelta
 
 from homeassistant.components.binary_sensor import (
     DEVICE_CLASS_CONNECTIVITY,
@@ -32,11 +33,13 @@ class WanStatus(BinarySensorEntity):
     @property
     def name(self):
         """Return name sensor."""
-        return f"{TEMPLATE_SENSOR} Wan status"
+        return "WAN Status"
 
+    @property
     def is_on(self):
         """Return true if the binary sensor is on."""
-        return self.coordinator.data["wan_status"].get("status")
+        wstatus = self.coordinator.data.get("wan_status", {}).get("data", {})
+        return wstatus.get("WanState") == "up"
 
     @property
     def unique_id(self):
@@ -46,33 +49,29 @@ class WanStatus(BinarySensorEntity):
     @property
     def device_info(self):
         """Return the device info."""
-        return {
-            "name": self.name,
-            "identifiers": {(DOMAIN, self.unique_id)},
-            "manufacturer": TEMPLATE_SENSOR,
-            "via_device": (DOMAIN, self.box_id),
-        }
+        return {"identifiers": {(DOMAIN, self.box_id)}}
 
     @property
     def device_state_attributes(self):
         """Return the device state attributes."""
-        return {
-            "link_type": self.coordinator.data["wan_status"]
-            .get("data", {})
-            .get("LinkType"),
-            "link_state": self.coordinator.data["wan_status"]
-            .get("data", {})
-            .get("LinkState"),
-            "last_connection_error": self.coordinator.data["wan_status"]
-            .get("data", {})
-            .get("LastConnectionError"),
-            "wan_ipaddress": self.coordinator.data["wan_status"]
-            .get("data", {})
-            .get("IPAddress"),
-            "wan_ipv6address": self.coordinator.data["wan_status"]
-            .get("data", {})
-            .get("IPv6Address"),
+        wstatus = self.coordinator.data.get("wan_status", {}).get("data", {})
+        uptime = self.coordinator.data["infos"].get("UpTime")
+        _attributs = {
+            "link_type": wstatus.get("LinkType"),
+            "link_state": wstatus.get("LinkState"),
+            "last_connection_error": wstatus.get("LastConnectionError"),
+            "wan_ipaddress": wstatus.get("IPAddress"),
+            "wan_ipv6address": wstatus.get("IPv6Address"),
+            "uptime": ConvertSectoDay(uptime),
         }
+        cwired = self.coordinator.data.get("count_wired_devices")
+        if cwired > 0:
+            _attributs.update({"wired clients": cwired})
+        cwireless = self.coordinator.data.get("count_wireless_devices")
+        if cwireless > 0:
+            _attributs.update({"wireless clients": cwireless})
+
+        return _attributs
 
     @property
     def available(self) -> bool:
@@ -86,12 +85,18 @@ class WanStatus(BinarySensorEntity):
 
     async def async_added_to_hass(self):
         """When entity is added to hass."""
+        await super().async_added_to_hass()
         self.coordinator.async_add_listener(self.async_write_ha_state)
 
     async def async_will_remove_from_hass(self):
         """When entity will be removed from hass."""
+        await super().async_will_remove_from_hass()
         self.coordinator.async_remove_listener(self.async_write_ha_state)
 
     async def async_update(self) -> None:
         """Update WLED entity."""
         await self.coordinator.async_request_refresh()
+
+
+def ConvertSectoDay(n):
+    return datetime.today() - timedelta(seconds=n)
