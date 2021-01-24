@@ -25,7 +25,7 @@ I regularly update my configuration files. You can check my current HA version [
     * [Ikea TRÅDFRI switch on/off](https://www.ikea.com/fr/fr/p/tradfri-variateur-dintensite-sans-fil-blanc-70408595/) X4
   * Cover
     * [OpenGarage](https://opengarage.io)
-    * [Dooxie with Netatmo wired connected switch for roller shutter](https://www.legrand.fr/pro/catalogue/42798-version-dooxie-with-netatmo/interrupteur-filaire-connecte-dooxie-with-netatmo-pour-volet-roulant-blanc) x1
+    * [Dooxie with Netatmo wired connected switch for roller shutter](https://www.legrand.fr/pro/catalogue/42798-version-dooxie-with-netatmo/interrupteur-filaire-connecte-dooxie-with-netatmo-pour-volet-roulant-blanc) x14
   * Voice Interaction    
     * [Google Home](https://store.google.com/product/google_home), with the [Google Assistant](https://home-assistant.io/components/google_assistant/)
   * Media

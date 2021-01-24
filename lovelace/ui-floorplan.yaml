@@ -5,11 +5,65 @@ cards:
     image: /local/forplan/rdc.png
     elements:
       - type: state-icon
-        entity: cover.window_covering_device_2
+        entity: cover.volet_baie_salle_a_manger
         state_color: false
         style:
           top: 94%
           left: 74%
+
+      - type: state-icon
+        entity: cover.volet_salle_a_manger
+        state_color: false
+        style:
+          top: 94%
+          left: 47%
+          
+      - type: state-icon
+        entity: cover.volet_salle_salon
+        state_color: false
+        style:
+          top: 69%
+          left: 92%
+          transform: rotate(90deg)
+      
+      - type: state-icon
+        entity: cover.volet_salon
+        state_color: false
+        style:
+          top: 26%
+          left: 88%
+      
+      - type: state-icon
+        entity: cover.volet_chambre_parental
+        state_color: false
+        style:
+          top: 94%
+          left: 10%
+          
+      - type: state-icon
+        entity: cover.volet_salon_canape
+        state_color: false
+        style:
+          top: 40%
+          left: 92%
+          transform: rotate(90deg)
+          
+      - type: state-icon
+        entity: cover.volet_cuisine_1
+        state_color: false
+        style:
+          top: 4%
+          left: 28%
+      
+      - type: state-icon
+        entity: cover.volet_cuisine_2
+        state_color: false
+        style:
+          top: 5%
+          left: 0.5%
+          transform: rotate(90deg)
+          
+          
       - type: icon
         icon: 'mdi:flower'
         entity: plant.yukka
@@ -120,7 +174,51 @@ cards:
   - type: picture-elements
     image: /local/forplan/etage.png
     elements:
-    
+      - type: state-icon
+        entity: cover.volet_chambre_soline
+        state_color: false
+        style:
+          top: 76%
+          left: 1%
+          transform: rotate(90deg)
+          
+      - type: state-icon
+        entity: cover.volet_bureau_patricia
+        state_color: false
+        style:
+          top: 73%
+          left: 91.5%
+          transform: rotate(90deg)
+          
+      - type: state-icon
+        entity: cover.volet_chambre_amis
+        state_color: false
+        style:
+          top: 35%
+          left: 91.5%
+          transform: rotate(90deg)
+          
+      - type: state-icon
+        entity: cover.volet_chambre_noah_droit
+        state_color: false
+        style:
+          top: 90%
+          left: 39%
+      
+      - type: state-icon
+        entity: cover.volet_salle_de_jeux
+        state_color: false
+        style:
+          top: 5.5%
+          left: 20%
+          
+      - type: state-icon
+        entity: cover.volet_chambre_noah_droit
+        state_color: false
+        style:
+          top: 90%
+          left: 53%
+          
       - type: icon
         icon: 'mdi:printer'
         entity: group.printer
@@ -153,12 +251,12 @@ cards:
       - type: state-label
         entity: sensor.alcove_temperature
         style:
-          top: 6%
+          top: 29%
           left: 18%      
       - type: state-label
         entity: sensor.alcove_humidity
         style:
-          top: 10%
+          top: 33%
           left: 18%
     
   - type: picture-elements

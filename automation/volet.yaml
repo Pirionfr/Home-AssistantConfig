@@ -7,7 +7,7 @@
   - service: cover.open_cover
     data: {}
     entity_id: 
-    - cover.window_covering_device_2
+    - group.volet
     
 - alias: fermer volet
   description: 'fermer volet'
@@ -18,4 +18,4 @@
   - service: cover.close_cover
     data: {}
     entity_id: 
-    - cover.window_covering_device_2
+    - group.volet

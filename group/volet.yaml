@@ -1,0 +1,40 @@
+volet_bas:
+  name: Volet bas
+  entities:
+    - cover.volet_baie_salle_a_manger
+    - cover.volet_salle_salon
+    - cover.volet_salle_a_manger
+    - cover.volet_salon
+    - cover.volet_salon_canape
+    - cover.volet_chambre_parental
+    - cover.volet_cuisine_1
+    - cover.volet_cuisine_2
+
+
+volet_haut:
+  name: Volet haut
+  entities:
+    - cover.volet_chambre_soline
+    - cover.volet_chambre_noah_droit
+    - cover.volet_chambre_noah_gauche
+    - cover.volet_salle_de_jeux
+    - cover.volet_bureau_patricia
+    - cover.volet_chambre_amis
+    
+volet:
+  name: Volet
+  entities:
+    - cover.volet_baie_salle_a_manger
+    - cover.volet_salle_salon
+    - cover.volet_salle_a_manger
+    - cover.volet_salon
+    - cover.volet_salon_canape
+    - cover.volet_chambre_parental
+    - cover.volet_cuisine_1
+    - cover.volet_cuisine_2
+    - cover.volet_chambre_soline
+    - cover.volet_chambre_noah_droit
+    - cover.volet_chambre_noah_gauche
+    - cover.volet_salle_de_jeux
+    - cover.volet_bureau_patricia
+    - cover.volet_chambre_amis

@@ -31,7 +31,18 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-
+          
+          - type: glance
+            entities:
+              - entity: light.dimmable_light_5
+                tap_action:
+                  action: toggle
+          
+          - type: entities
+            entities:
+              - cover.volet_salon
+              - cover.volet_salon_canape
+          
           - type: custom:mini-media-player
             entity: media_player.salon
 
@@ -47,6 +58,12 @@ cards:
               - entity: switch.luminaire_salle_a_manger
                 tap_action:
                   action: toggle
+          
+          - type: entities
+            entities:
+              - cover.volet_baie_salle_a_manger
+              - cover.volet_salle_a_manger
+              - cover.volet_salle_salon
 
       - type: vertical-stack
         title: Chambre Parentale
@@ -78,7 +95,36 @@ cards:
               - entity: light.chevet_gauche
                 tap_action:
                   action: toggle
-
+          
+          - type: entities
+            entities:
+              - cover.volet_chambre_parental
+              
+      - type: vertical-stack
+        title: Cuisine
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Température
+                entities:
+                  - sensor.cuisine_temperature
+                line_color: blue
+                line_width: 8
+                font_size: 75
+              - type: custom:mini-graph-card
+                name: Humidité
+                entities:
+                  - sensor.cuisine_humidity
+                line_color: var(--accent-color)
+                line_width: 8
+                font_size: 75
+                
+          - type: entities
+            entities:
+              - cover.volet_cuisine_1
+              - cover.volet_cuisine_2
+                
       - type: vertical-stack
         title: Salle de bain
         cards:
@@ -121,6 +167,11 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
+          
+          - type: entities
+            entities:
+              - cover.volet_chambre_noah_droit
+              - cover.volet_chambre_noah_gauche
 
       - type: vertical-stack
         title: Chambre Soline
@@ -141,7 +192,24 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
+                
+          - type: entities
+            entities:
+              - cover.volet_chambre_soline
 
+      - type: vertical-stack
+        title: Bureau Patricia
+        cards:
+          - type: entities
+            entities:
+              - cover.volet_bureau_patricia
+      
+      - type: vertical-stack
+        title: Chambre d'amis
+        cards:
+          - type: entities
+            entities:
+              - cover.volet_chambre_amis
 
       - type: vertical-stack
         title: Alcôve
@@ -162,6 +230,10 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
+          
+          - type: entities
+            entities:
+              - cover.volet_chambre_soline
             
   - type: vertical-stack
     title: Sous-sol
