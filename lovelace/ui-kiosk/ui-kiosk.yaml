@@ -1,0 +1,507 @@
+title: homeAautomation
+icon: "mdi:home-automation"
+panel: true
+path: kiosk
+theme: kiosk
+cards:
+  - type: picture-elements
+    image: /local/background.png
+    elements:
+      - type: custom:hui-element
+        card_type: markdown
+        style: { opacity: 0 }
+        content:
+          preload
+
+          #################################################
+          #                                               #
+          #                     Footer                    #
+          #                                               #
+          #################################################
+
+      - type: custom:hui-markdown-card
+        class: footer
+        style: { top: 97%, left: 63%, width: 80% }
+        content: >
+          {% set break = ' ‍ ‍ ‍<font color="#2f3436">|</font> ‍ ‍ ‍' %}
+          <font color='#6a7377'>
+          <ha-icon icon="mdi:weather-cloudy"></ha-icon> <b>Méteo</b>{{ break -}}
+          <ha-icon icon="mdi:thermometer"></ha-icon> <b>{{  states('sensor.plouzane_temperature') }} °C</b> {{ break -}}
+          <ha-icon icon="mdi:gauge"></ha-icon> <b>{{  states('sensor.plouzane_pressure') }} hPa</b> {{ break -}}
+          <ha-icon icon="mdi:weather-windy"></ha-icon> <b>{{  states('sensor.plouzane_wind_speed') }} km/h</b> {{ break -}}
+          <ha-icon icon="mdi:sunglasses"></ha-icon> <b>{{  states('sensor.plouzane_uv') }} UV index </b> {{ break -}}
+          <ha-icon icon="mdi:cup-water"></ha-icon> <b>{{  states('sensor.plouzane_daily_precipitation') }} mm </b> {{ break -}}
+          <ha-icon icon="mdi:weather-partly-cloudy"></ha-icon> <b>{{  states('sensor.plouzane_cloud_cover') }} % de couverture </b>
+          </font>
+
+        ##########################################################################
+        #                                                                        #
+        #                              * SIDEBAR *                               #
+        #                                                                        #
+        ##########################################################################
+
+      - type: image
+        image: local/sidebar.png
+        style:
+          {
+            top: 49%,
+            left: 10%,
+            width: 20%,
+            pointer-events: none,
+            border-right: "1.5px solid rgba(58,69,73,0.2)",
+          }
+
+      #################################################
+      #                                               #
+      #                   MARKDOWN                    #
+      #                                               #
+      #################################################
+
+      - type: custom:hui-markdown-card
+        class: sidebar
+        style: { top: 8%, left: 11% }
+        content: >
+          <span>{{ states('sensor.time') }}</span>
+
+
+          <font color='#6a7377'><b>{{ states('sensor.sidebar_day') }}</b><br>
+          <b>{{ states('sensor.sidebar_date') }}</b></font><br> 
+
+
+          <b>{{ states('sensor.sidebar_greeting') }}</b>
+
+
+          <font color='#6a7377'>
+          {{ states('sensor.sidebar_weather') }}
+
+
+          {% if is_state('binary_sensor.internet_access', 'off') %}
+          {{'\u26A0\uFE0F'}} Vérifier l'accès Internet
+          {% endif %}
+          </font>
+
+      #################################################
+      #                                               #
+      #                  INFO BUTTON                  #
+      #                                               #
+      #################################################
+      - type: icon
+        icon: mdi:information-outline
+        style:
+          top: 87.41%
+          left: 10.7%
+          color: rgb(255, 255, 255)
+          opacity: 0.1
+          padding: 0.8vw
+          --mdc-icon-size: 4vw
+        #tap_action: !include popup/sidebar_information.yaml
+
+      ##########################################################################
+      #                                                                        #
+      #                             * Accueil *                                 #
+      #                                                                        #
+      ##########################################################################
+
+      - prefix: Accueil
+        entity: sensor.placeholder
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        type: state-label
+        style:
+          top: 7%
+          left: 25%
+          color: "#bcbebf"
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          max-width: 1px
+          cursor: default
+      #################################################
+      #                                               #
+      #                    Pirion                    #
+      #                                               #
+      #################################################
+
+      - type: custom:button-card
+        entity: person.pirion
+        triggers_update: ["person.pirion", "sensor.time"]
+        style:
+          top: 19.5%
+          left: 30%
+          width: 9.5%
+        tap_action: !include popup_pirion.yaml
+        hold_action: !include popup_pirion.yaml
+        template: person
+
+      #################################################
+      #                                               #
+      #                     PATOO                     #
+      #                                               #
+      #################################################
+
+      - type: custom:button-card
+        entity: person.patoo
+        triggers_update: ["person.patoo", "sensor.time"]
+        style:
+          top: 19.5%
+          left: 40.5%
+          width: 9.5%
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        template: person
+
+      - type: custom:button-card
+        entity: cover.garage_door
+        name: Garage
+        style:
+          top: 39%
+          left: 30%
+          width: 9.5%
+        custom_fields:
+          icon_garage: >
+            [[[ if (entity.state === 'closed' ) {
+              return  `<svg viewBox="0 0 50 50"><path d="M19 20h-2v-9H7v9H5V9l7-4l7 4v11M8 12h8v2H8v-2m0 3h8v2H8v-2m8 3v2H8v-2h8z" fill="#9da0a2"/></svg>`;
+            } else {
+              return  `<svg viewBox="0 0 50 50"><path d="M19 20h-2v-9H7v9H5V9l7-4l7 4v11M8 12h8v2H8v-2m0" fill="#626262"/></svg>`;
+            } ]]]
+        styles:
+          custom_fields:
+            icon_garage: [top: 1%, left: 4.5%, width: 10vw, position: absolute]
+        template: cover
+
+      - type: custom:button-card
+        entity: group.volet
+        tap_action: call-service
+        service: >
+          {% if  (entity.state === 'closed' ) %}
+            automation.turn_on
+          {% else %}
+            automation.turn_off
+          {% endif %}
+        hold_action: !include popup_cover.yaml
+        style:
+          top: 39%
+          left: 40.5%
+          width: 9.5%
+        custom_fields:
+          icon_shutter: >
+            [[[ if (entity.state === 'closed' ) {
+              return  `<svg viewBox="0 0 50 50"><path d="M3 4h18v4h-2v12h-2V8H7v12H5V8H3V4m5 5h8v2H8V9m0 3h8v2H8v-2m0 3h8v2H8v-2m0 3h8v2H8v-2z" fill="#9da0a2"/></svg>`;
+            } else {
+              return  `<svg viewBox="0 0 50 50"><path d="M3 4h18v4h-2v12h-2V8H7v12H5V8H3V4m5 5h8v2H8V9z" fill="#626262"/></svg>`;
+            } ]]]
+        styles:
+          custom_fields:
+            icon_shutter: [top: 4%, left: 4.5%, width: 10vw, position: absolute]
+        template: cover
+
+      ##########################################################################
+      #                                                                        #
+      #                               * MEDIA *                                #
+      #                                                                        #
+      ##########################################################################
+
+      - prefix: Media
+        entity: sensor.placeholder
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        type: state-label
+        style:
+          top: 7%
+          left: 50%
+          color: "#bcbebf"
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          max-width: 1px
+          cursor: default
+
+      - type: custom:swipe-card
+        start_card: 1
+        parameters:
+          roundLengths: true
+          effect: coverflow
+          speed: 650
+          spaceBetween: 20
+          threshold: 7
+          coverflowEffect:
+            rotate: 80
+            depth: 300
+        style:
+          top: 10.5%
+          left: 60.3%
+          width: 20.2%
+          height: 1px
+          --ha-card-border-radius: .88vw
+        cards:
+          - type: picture-elements
+            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' /%3E"
+            elements:
+              - type: custom:button-card
+                entity: media_player.spotify_pirionfr
+                custom_fields:
+                  icon: mdi:spotify
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                template: conditional_media
+
+      ##########################################################################
+      #                                                                        #
+      #                             * calendar *                               #
+      #                                                                        #
+      ##########################################################################
+
+      - prefix: Calendrier
+        entity: sensor.placeholder
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        type: state-label
+        style:
+          top: 7%
+          left: 75%
+          color: "#bcbebf"
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          max-width: 1px
+          cursor: default
+
+      - type: custom:button-card
+        aspect_ratio: 1/1
+        show_state: false
+        show_icon: false
+        style:
+          top: 29.1%
+          left: 85%
+          width: 20.2%
+        styles:
+          card:
+            [
+              font-family: Sf Display,
+              letter-spacing: 0.05vw,
+              font-weight: 400,
+              color: "rgba(255, 255, 255, 0.3)",
+              font-size: 1.34vw,
+              background-color: "rgba(115, 115, 115, 0.2)",
+              border-radius: 0.8vw,
+              box-shadow: none,
+              transition: none,
+            ]
+          custom_fields: [top: 0%, position: absolute]
+        custom_fields:
+          calendar:
+            card:
+              type: calendar
+              entities:
+                - calendar.dimitri
+      ##########################################################################
+      #                                                                        #
+      #                              * Piece *                                 #
+      #                                                                        #
+      ##########################################################################
+
+      - prefix: Piece
+        entity: sensor.placeholder
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        type: state-label
+        style:
+          top: 52%
+          left: 25%
+          color: "#bcbebf"
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          max-width: 1px
+          cursor: default
+
+      - type: custom:button-card
+        entity: light.luminaire_salon
+        name: Salon
+        style:
+          top: 64.5%
+          left: 30%
+          width: 9.5%
+        custom_fields:
+          icon_hue: &icon_hue >
+            [[[ const state = entity.state === 'on' ? 'animate' : null;
+            return `<svg viewBox="0 0 50 50"><style>@keyframes animate{0%{transform: scale(0.85);}20%{transform: scale(1.1);}40%{transform: scale(0.95);}60%{transform: scale(1.03);}80%{transform: scale(0.97);}100%{transform: scale(1);}}.animate{animation: animate 0.8s; transform-origin: center;}</style>
+            <path fill="#9da0a2" d="M27.4 47.3h-4.9s-.7.1-.7.8.4.9.7.9h4.9c.3 0 .7-.1.7-.9s-.7-.8-.7-.8zm3.3-2.9H19.3s-.8 0-.8.8.6.9.8.9h11.5c.2 0 .8-.1.8-.9-.1-.8-.9-.8-.9-.8zm0-3H19.3s-.8 0-.8.8.6.9.8.9h11.5c.2 0 .8-.1.8-.9-.1-.8-.9-.8-.9-.8zm0-2.9H19.3s-.8 0-.8.8.6.9.8.9h11.5c.2 0 .8-.1.8-.9s-.9-.8-.9-.8zm5.2-23.2c-3.3-5.3-7-5.6-10.9-5.6-3.8 0-8.4.4-10.9 5.6-.1.1-.1.3.1.7.4.8 3.3 7.2 3.2 18.8 0 1.1-.1 1.6 0 1.7 0 .1 0 .7 1.1.7h13c1 0 1-.5 1.1-.7v-1.7c-.1-11.6 2.8-18 3.2-18.8.1-.4.1-.5.1-.7"/>
+            <path class="${state}" fill="var(--button-card-light-color-no-temperature)" d="M14.1 15.3c3.4-.3 7-.4 10.9-.4 3.8 0 7.5.2 10.9.4.4-.4.7-.8.9-1.1C39 8.5 38.9 6.5 38.9 6c-.2-4.4-8.4-5-12.1-5h0-3.4c-3.7 0-12 .5-12.1 5 0 .5-.1 2.5 2.1 8.2 0 .3.3.8.7 1.1z"/></svg>`; ]]]
+        styles:
+          name:
+            - font-size: 1vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: switch.luminaire_salle_a_manger
+        name: Salle à Manger
+        style:
+          top: 64.5%
+          left: 40.5%
+          width: 9.5%
+        custom_fields:
+          icon_hue: *icon_hue
+        styles:
+          name:
+            - font-size: 0.95vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: light.luminaire_chambre_parental
+        name: chambre Parent
+        style:
+          top: 64.5%
+          left: 51%
+          width: 9.5%
+        custom_fields:
+          icon_hue: *icon_hue
+        styles:
+          name:
+            - font-size: 0.95vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: sensor.placeholder
+        name: Cuisine
+        style:
+          top: 64.5%
+          left: 61.5%
+          width: 9.5%
+        custom_fields:
+          icon_hue: *icon_hue
+        styles:
+          name:
+            - font-size: 0.95vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: sensor.placeholder
+        name: Chambre Soline
+        style:
+          top: 64.5%
+          left: 72%
+          width: 9.5%
+        custom_fields:
+          icon_hue: *icon_hue
+        styles:
+          name:
+            - font-size: 0.95vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: sensor.placeholder
+        name: Chambre Noah
+        style:
+          top: 64.5%
+          left: 82.5%
+          width: 9.5%
+        custom_fields:
+          icon_hue: *icon_hue
+        styles:
+          name:
+            - font-size: 0.95vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: light.bureau_dimitri
+        name: Bureau Dimitri
+        style:
+          top: 64.5%
+          left: 93%
+          width: 9.5%
+        custom_fields:
+          icon_hue: *icon_hue
+        styles:
+          name:
+            - font-size: 0.95vw
+          custom_fields:
+            icon_hue: [top: 11%, left: 4.5%, width: 3.05vw, position: absolute]
+        template: light
+
+      - type: custom:button-card
+        entity: sensor.salon_temperature
+        name: Salon
+        style:
+          top: 84%
+          left: 30%
+          width: 9.5%
+        template: graph_temp
+
+      - type: custom:button-card
+        entity: sensor.salon_temperature
+        name: Salle à manger
+        style:
+          top: 84%
+          left: 40.5%
+          width: 9.5%
+        template: graph_temp
+
+      - type: custom:button-card
+        entity: sensor.chambre_parental_temperature
+        name: Chambre Parent
+        style:
+          top: 84%
+          left: 51%
+          width: 9.5%
+        template: graph_temp
+
+      - type: custom:button-card
+        entity: sensor.cuisine_temperature
+        name: Cuisine
+        style:
+          top: 84%
+          left: 61.5%
+          width: 9.5%
+        template: graph_temp
+
+      - type: custom:button-card
+        entity: sensor.chambre_soline_temperature
+        name: Chambre Soline
+        style:
+          top: 84%
+          left: 72%
+          width: 9.5%
+        template: graph_temp
+
+      - type: custom:button-card
+        entity: sensor.chambre_noah_temperature
+        name: Chambre Noah
+        style:
+          top: 84%
+          left: 82.5%
+          width: 9.5%
+        template: graph_temp
+
+      - type: custom:button-card
+        entity: sensor.bureau_temperature
+        name: Bureau Dimitri
+        style:
+          top: 84%
+          left: 93%
+          width: 9.5%
+        template: graph_temp

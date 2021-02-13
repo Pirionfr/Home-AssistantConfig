@@ -15,7 +15,7 @@ homeassistant:
   internal_url: !secret internal_url
   external_url: !secret external_url
   packages: !include_dir_named packages/
-  whitelist_external_dirs:
+  allowlist_external_dirs:
     - /share/photo
 
 default_config:
@@ -26,13 +26,13 @@ http:
 
 # Enables the frontend
 frontend:
+  themes: !include_dir_merge_named lovelace/themes
 
-
-lovelace:
-  mode: yaml
+lovelace: !include components/lovelace.yaml
 
 panel_iframe: !include lovelace/panel.yaml
 
+browser_mod:
 discovery:
 local_ip:
 stream:
@@ -43,13 +43,13 @@ livebox: !include components/livebox.yaml
 influxdb: !include components/influxdb.yaml
 octoprint: !include components/octoprint.yaml
 spotify: !include components/spotify.yaml
+spotcast: !include components/spotcast.yaml
 sabnzbd: !include components/sabnzbd.yaml
 speedtestdotnet: !include components/speedtestdotnet.yaml
 calendar: !include components/calendar.yaml
 tts: !include components/tts.yaml
 media_player: !include components/mediaplayer.yaml
 camera: !include components/camera.yaml
-weather: !include components/weather.yaml
 plant: !include components/plant.yaml
 device_tracker: !include components/device_tracker.yaml
 logger: !include components/logger.yaml

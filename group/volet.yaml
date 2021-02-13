@@ -10,7 +10,6 @@ volet_bas:
     - cover.volet_cuisine_1
     - cover.volet_cuisine_2
 
-
 volet_haut:
   name: Volet haut
   entities:
@@ -20,7 +19,7 @@ volet_haut:
     - cover.volet_salle_de_jeux
     - cover.volet_bureau_patricia
     - cover.volet_chambre_amis
-    
+
 volet:
   name: Volet
   entities:

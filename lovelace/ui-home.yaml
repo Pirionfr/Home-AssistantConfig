@@ -1,16 +1,14 @@
 title: main
-icon: 'mdi:home-outline'
+icon: "mdi:home-outline"
 cards:
   #- type: 'custom:linky-card'
   #  title: Consomation Electrique
   #  entity: sensor.linky
   #  show_header_toggle: false
-    
+
   - type: vertical-stack
     title: Rez de chaussée
     cards:
-
-        
       - type: vertical-stack
         title: Salon
         cards:
@@ -31,23 +29,22 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-          
+
           - type: glance
             entities:
               - entity: light.dimmable_light_5
                 tap_action:
                   action: toggle
-          
+
           - type: entities
             entities:
               - cover.volet_salon
               - cover.volet_salon_canape
-          
+
           - type: custom:mini-media-player
             entity: media_player.salon
 
           - type: plant-status
-            title: Yukka
             entity: plant.yukka
 
       - type: vertical-stack
@@ -58,7 +55,7 @@ cards:
               - entity: switch.luminaire_salle_a_manger
                 tap_action:
                   action: toggle
-          
+
           - type: entities
             entities:
               - cover.volet_baie_salle_a_manger
@@ -95,11 +92,11 @@ cards:
               - entity: light.chevet_gauche
                 tap_action:
                   action: toggle
-          
+
           - type: entities
             entities:
               - cover.volet_chambre_parental
-              
+
       - type: vertical-stack
         title: Cuisine
         cards:
@@ -119,12 +116,12 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-                
+
           - type: entities
             entities:
               - cover.volet_cuisine_1
               - cover.volet_cuisine_2
-                
+
       - type: vertical-stack
         title: Salle de bain
         cards:
@@ -144,7 +141,7 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-              
+
   - type: vertical-stack
     title: Etage
     cards:
@@ -167,7 +164,7 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-          
+
           - type: entities
             entities:
               - cover.volet_chambre_noah_droit
@@ -192,7 +189,7 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-                
+
           - type: entities
             entities:
               - cover.volet_chambre_soline
@@ -203,7 +200,7 @@ cards:
           - type: entities
             entities:
               - cover.volet_bureau_patricia
-      
+
       - type: vertical-stack
         title: Chambre d'amis
         cards:
@@ -230,14 +227,17 @@ cards:
                 line_color: var(--accent-color)
                 line_width: 8
                 font_size: 75
-          
+
           - type: entities
             entities:
               - cover.volet_chambre_soline
-            
+
   - type: vertical-stack
     title: Sous-sol
     cards:
+      - type: thermostat
+        entity: climate.thermostat
+
       - type: vertical-stack
         title: Bureau Dimitri
         cards:
@@ -267,4 +267,7 @@ cards:
           - type: glance
             entities:
               - cover.garage_door
-          
+
+          - type: "custom:content-card-linky"
+            entity: sensor.myenedis_14690738007698
+            showDayPrice: true

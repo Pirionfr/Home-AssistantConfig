@@ -1,0 +1,63 @@
+action: call-service
+service: browser_mod.popup
+service_data:
+  title: Pirion
+  deviceID: this
+  theme: kiosk
+  style:
+    .: |
+      :host .content {
+        height: 670px;
+      }
+  card:
+    type: custom:layout-card
+    column_num: 1
+    cards:
+      - type: entities
+        state_color: true
+        show_header_toggle: false
+        entities:
+          - type: custom:hui-element
+            card_type: history-graph
+            entities: [entity: person.pirion]
+            hours_to_show: 24
+            refresh_interval: 0
+
+          - type: custom:hui-element
+            card_type: glance
+            show_state: false
+            style:
+              .: |
+                ha-card {
+                  background: none;
+                  box-shadow: none;
+                }
+              "ha-card>div>div:nth-child(1)":
+                $:
+                  "state-badge":
+                    $: |
+                      ha-icon {
+                        color: {{ '#3182b7' if is_state('device_tracker.oneplus6t_1_home', 'home') else '#FFFFFF20' }};
+                      }
+              "ha-card>div>div:nth-child(2)":
+                $:
+                  "state-badge":
+                    $: |
+                      ha-icon {
+                        color: {{ '#3182b7' if is_state('device_tracker.oneplus_a6010', 'home') else '#FFFFFF20' }};
+                      }
+
+            entities:
+              - entity: device_tracker.oneplus6t_1_home
+                name: Router
+                icon: mdi:wifi
+
+              - entity: device_tracker.oneplus_a6010
+                name: Position
+                icon: mdi:cellphone-android
+
+      - type: custom:hui-element
+        card_type: map
+        class: map
+        entities: [device_tracker.oneplus_a6010]
+        default_zoom: 15

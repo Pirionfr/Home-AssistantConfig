@@ -1,23 +1,24 @@
 title: Sécurité
-icon: 'mdi:cctv'
+icon: "mdi:cctv"
 cards:
-
   - type: horizontal-stack
     cards:
-      - type: 'custom:owntrack-card'
-        entities: 
+      - type: "custom:owntrack-card"
+        entities:
           - device_tracker.oneplus_a6010
           - sensor.oneplus_a6010_niveau_de_batterie
-        image: '/local/photo/dim.png'
-        
-      - type: 'custom:owntrack-card'
-        entities: 
+        image: "/local/photo/dim.png"
+
+      - type: "custom:owntrack-card"
+        entities:
           - device_tracker.patoo
           - sensor.patoo_niveau_de_batterie
-        image: '/local/photo/patoo.png'
-    
+        image: "/local/photo/patoo.png"
+
   - type: map
-    aspect_ratio: 1.78
+    geo_location_sources:
+      - all
+    aspect_ratio: "1.78"
     default_zoom: 10
     entities:
       - device_tracker.oneplus_a6010
@@ -25,10 +26,10 @@ cards:
       - zone.home
       - zone.ovh
       - zone.ecole
-      
+
   - type: picture-glance
     title: Garage
-    entities: 
+    entities:
       - switch.dafang_ir_filter
       - switch.dafang_ir_led
       - switch.dafang_night_mode

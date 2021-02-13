@@ -22,6 +22,7 @@ I regularly update my configuration files. You can check my current HA version [
     * [Hue lights](https://www2.meethue.com/fr-fr/p/hue-white-pack-de-1-e27/8718696785317) X3
     * [Hue Dimmer](https://www2.meethue.com/fr-fr/p/hue-variateur/8718696743157)
     * [Ikea TRÅDFRI light](https://www.ikea.com/fr/fr/p/tradfri-ampoule-led-e27-806-lumen-sans-fil-a-variateur-dintensite-blanc-chaud-blanc-chaud-globe-opalin-90408797/) X4
+    * [Dooxie with Netatmo remote switch](https://www.legrand.fr/pro/catalogue/42796-version-dooxie-with-netatmo/commande-sans-fil-dooxie-with-netatmo-pour-eclairage-ou-prise-connectee-ou-micromodule-blanc) X2
     * [Ikea TRÅDFRI switch on/off](https://www.ikea.com/fr/fr/p/tradfri-variateur-dintensite-sans-fil-blanc-70408595/) X4
   * Cover
     * [OpenGarage](https://opengarage.io)

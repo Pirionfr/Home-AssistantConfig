@@ -1,0 +1,41 @@
+action: call-service
+service: browser_mod.popup
+service_data:
+  title: Volet
+  deviceID: this
+  theme: kiosk
+  style:
+    .: |
+      :host .content {
+        width: calc(1000px);
+        max-width: 91vw;
+      }
+  card:
+    type: custom:layout-card
+    column_num: 2
+    cards:
+      - type: entities
+        title: Bas
+        class: add_header
+        show_header_toggle: false
+        entities:
+          - cover.volet_baie_salle_a_manger
+          - cover.volet_salle_salon
+          - cover.volet_salle_a_manger
+          - cover.volet_salon
+          - cover.volet_salon_canape
+          - cover.volet_chambre_parental
+          - cover.volet_cuisine_1
+          - cover.volet_cuisine_2
+
+      - type: entities
+        title: haut
+        class: add_header
+        show_header_toggle: false
+        entities:
+          - cover.volet_chambre_soline
+          - cover.volet_chambre_noah_droit
+          - cover.volet_chambre_noah_gauche
+          - cover.volet_salle_de_jeux
+          - cover.volet_bureau_patricia
+          - cover.volet_chambre_amis

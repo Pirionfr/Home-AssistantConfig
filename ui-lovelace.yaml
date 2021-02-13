@@ -1,18 +1,3 @@
-
-
-resources:
-  - url: /local/custom_ui/linky-card.js?
-    type: js
-  - url: /local/custom_ui/ext-weblink.js?
-    type: js
-  - url: /local/custom_ui/owntrack-card.js?
-    type: js
-  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-    type: module
-  - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
-    type: module
-
-
 views:
   - !include lovelace/ui-floorplan.yaml
   - !include lovelace/ui-home.yaml
@@ -20,4 +5,3 @@ views:
   - !include lovelace/ui-media.yaml
   - !include lovelace/ui-security.yaml
   - !include lovelace/ui-network.yaml
-

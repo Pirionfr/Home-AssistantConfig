@@ -1,0 +1,6 @@
+kiosk_mode:
+
+button_card_templates: !include lovelace/button_card_templates.yaml
+
+views:
+  - !include lovelace/ui-kiosk/ui-kiosk.yaml

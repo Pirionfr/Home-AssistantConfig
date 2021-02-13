@@ -1,0 +1,3 @@
+- platform: ping
+  name: internet_access
+  host: 8.8.8.8

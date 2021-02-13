@@ -1,0 +1,60 @@
+- alias: "Salon Dimmer"
+  initial_state: on
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: interrupteur_salon
+  action:
+    - choose:
+        # Normal ON dimmed
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.event == 2002 }}"
+          sequence:
+            - service: light.turn_on
+              data:
+                entity_id:
+                  - light.luminaire_salon
+        # Increase
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.event == 2001 }}"
+          sequence:
+            - service: deconz.configure
+              data:
+                entity: light.luminaire_salon
+                field: "/state"
+                data: { "bri": 254, "transitiontime": 50 }
+                bridgeid: 00212E06AE6C
+        # Decrease
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.event == 1001 }}"
+          sequence:
+            - service: deconz.configure
+              data:
+                entity: light.luminaire_salon
+                field: "/state"
+                data: { "bri": 0, "transitiontime": 50 }
+                bridgeid: 00212E06AE6C
+        # Stop increase/decrease
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.event in ( 1003, 2003 ) }}"
+          sequence:
+            - service: deconz.configure
+              data:
+                entity: light.luminaire_salon
+                field: "/state"
+                data: { "bri_inc": 0 }
+                bridgeid: 00212E06AE6C
+        # Off
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.event == 1002 }}"
+          sequence:
+            - service: light.turn_off
+              data:
+                entity_id:
+                  - light.luminaire_salon

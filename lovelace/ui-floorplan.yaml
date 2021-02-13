@@ -1,5 +1,5 @@
 title: Floor plan
-icon: 'mdi:floor-plan'
+icon: "mdi:floor-plan"
 cards:
   - type: picture-elements
     image: /local/forplan/rdc.png
@@ -17,7 +17,7 @@ cards:
         style:
           top: 94%
           left: 47%
-          
+
       - type: state-icon
         entity: cover.volet_salle_salon
         state_color: false
@@ -25,21 +25,21 @@ cards:
           top: 69%
           left: 92%
           transform: rotate(90deg)
-      
+
       - type: state-icon
         entity: cover.volet_salon
         state_color: false
         style:
           top: 26%
           left: 88%
-      
+
       - type: state-icon
         entity: cover.volet_chambre_parental
         state_color: false
         style:
           top: 94%
           left: 10%
-          
+
       - type: state-icon
         entity: cover.volet_salon_canape
         state_color: false
@@ -47,14 +47,14 @@ cards:
           top: 40%
           left: 92%
           transform: rotate(90deg)
-          
+
       - type: state-icon
         entity: cover.volet_cuisine_1
         state_color: false
         style:
           top: 4%
           left: 28%
-      
+
       - type: state-icon
         entity: cover.volet_cuisine_2
         state_color: false
@@ -62,17 +62,16 @@ cards:
           top: 5%
           left: 0.5%
           transform: rotate(90deg)
-          
-          
+
       - type: icon
-        icon: 'mdi:flower'
+        icon: "mdi:flower"
         entity: plant.yukka
         style:
           top: 83%
           left: 47%
           --iron-icon-stroke-color: black
           --iron-icon-fill-color: rgba(0, 111, 0, .75)
-          
+
       - type: state-icon
         entity: switch.luminaire_salle_a_manger
         tap_action:
@@ -80,15 +79,15 @@ cards:
         style:
           top: 80%
           left: 60%
-          
+
       - type: state-icon
-        entity: light.dimmable_light_5
+        entity: light.luminaire_salon
         tap_action:
           action: toggle
         style:
           top: 38%
           left: 83%
-          
+
       - type: state-icon
         entity: light.chevet_droit
         tap_action:
@@ -96,7 +95,7 @@ cards:
         style:
           top: 68%
           left: 5%
-          
+
       - type: state-icon
         entity: light.luminaire_chambre_parental
         tap_action:
@@ -104,7 +103,7 @@ cards:
         style:
           top: 78%
           left: 19%
-          
+
       - type: state-icon
         entity: light.chevet_gauche
         tap_action:
@@ -112,65 +111,65 @@ cards:
         style:
           top: 88%
           left: 5%
-      
+
       - type: state-label
         entity: sensor.chambre_parental_temperature
         style:
           top: 64%
-          left: 19% 
+          left: 19%
       - type: state-label
         entity: sensor.chambre_parental_humidity
         style:
           top: 68%
-          left: 19%              
-          
+          left: 19%
+
       - type: state-label
         entity: sensor.salon_temperature
         style:
           top: 64%
-          left: 80%      
+          left: 80%
       - type: state-label
         entity: sensor.salon_humidity
         style:
           top: 68%
-          left: 80%    
-          
+          left: 80%
+
       - type: state-label
         entity: sensor.salle_de_bain_temperature
         style:
           top: 38%
-          left: 15%      
+          left: 15%
       - type: state-label
         entity: sensor.salle_de_bain_humidity
         style:
           top: 42%
           left: 15%
-      
+
       - type: state-label
         entity: sensor.cuisine_temperature
         style:
           top: 5%
-          left: 20%      
+          left: 20%
       - type: state-label
         entity: sensor.cuisine_humidity
         style:
           top: 9%
           left: 20%
-      
+
       - type: icon
-        icon: 'mdi:cast'
+        icon: "mdi:cast"
         entity: media_player.salon
         style:
           top: 35%
-          left: 70% 
-          
+          left: 70%
+
       - type: icon
-        icon: 'mdi:cast'
+        icon: "mdi:cast"
         entity: media_player.vsx_934_0009b0f227ee
         style:
           top: 29%
-          left: 70%          
-         
+          left: 70%
+
   - type: picture-elements
     image: /local/forplan/etage.png
     elements:
@@ -181,7 +180,7 @@ cards:
           top: 76%
           left: 1%
           transform: rotate(90deg)
-          
+
       - type: state-icon
         entity: cover.volet_bureau_patricia
         state_color: false
@@ -189,7 +188,7 @@ cards:
           top: 73%
           left: 91.5%
           transform: rotate(90deg)
-          
+
       - type: state-icon
         entity: cover.volet_chambre_amis
         state_color: false
@@ -197,139 +196,172 @@ cards:
           top: 35%
           left: 91.5%
           transform: rotate(90deg)
-          
+
       - type: state-icon
         entity: cover.volet_chambre_noah_droit
         state_color: false
         style:
           top: 90%
           left: 39%
-      
+
       - type: state-icon
         entity: cover.volet_salle_de_jeux
         state_color: false
         style:
           top: 5.5%
           left: 20%
-          
+
       - type: state-icon
-        entity: cover.volet_chambre_noah_droit
+        entity: cover.volet_chambre_noah_gauche
         state_color: false
         style:
           top: 90%
           left: 53%
-          
+
       - type: icon
-        icon: 'mdi:printer'
+        icon: "mdi:printer"
         entity: group.printer
         style:
           top: 80%
           left: 80%
-          
+
       - type: state-label
         entity: sensor.chambre_noah_temperature
         style:
           top: 65%
-          left: 50%      
+          left: 50%
       - type: state-label
         entity: sensor.chambre_noah_humidity
         style:
           top: 69%
           left: 50%
-                      
+
       - type: state-label
         entity: sensor.chambre_soline_temperature
         style:
           top: 65%
-          left: 15%      
+          left: 15%
       - type: state-label
         entity: sensor.chambre_soline_humidity
         style:
           top: 69%
           left: 15%
-           
+
       - type: state-label
         entity: sensor.alcove_temperature
         style:
           top: 29%
-          left: 18%      
+          left: 18%
       - type: state-label
         entity: sensor.alcove_humidity
         style:
           top: 33%
           left: 18%
-    
+
   - type: picture-elements
     image: /local/forplan/sous_sol.png
     elements:
-        - type: state-icon
-          entity: cover.garage_door
-          state_color: false
-          style:
-            top: 43%
-            left: 5%
+      - type: state-icon
+        entity: cover.garage_door
+        state_color: false
+        style:
+          top: 43%
+          left: 5%
 
-        - type: icon
-          icon: 'mdi:video'
-          entity: camera.garage_camera
-          style:
-            top: 30%
-            left: 45%
-            transform: rotate(170deg)
-            
-        - type: icon
-          icon: 'mdi:clipboard-pulse'
-          entity: sensor.linky
-          style:
-            top: 29%
-            left: 40%
-            --iron-icon-stroke-color: black
-            --iron-icon-fill-color: rgba(255, 255, 0, .75)
+      - type: icon
+        icon: "mdi:video"
+        entity: camera.garage_camera
+        style:
+          top: 30%
+          left: 45%
+          transform: rotate(170deg)
 
-        - type: state-icon
-          entity: light.bureau_dimitri
-          tap_action:
-            action: toggle
-          style:
-            top: 78%
-            left: 19%
-            
-        - type: state-icon
-          entity: switch.feu_tricolore
-          tap_action:
-            action: toggle
-          style:
-            top: 78%
-            left: 7%    
-            
-        - type: state-label
-          entity: sensor.bureau_temperature
-          style:
-            top: 64%
-            left: 20%      
-        - type: state-label
-          entity: sensor.bureau_humidity
-          style:
-            top: 68%
-            left: 20%
-            
-        - type: icon
-          icon: 'mdi:printer-3d'
-          entity: switch.cr10s
-          style:
-            top: 94%
-            left: 10%
-        
-        - type: icon
-          icon: 'mdi:google-home'
-          entity: media_player.bureau
-          style:
-            top: 94%
-            left: 14%
-            
-        - type: icon
-          icon: 'mdi:server'
-          entity: media_player.bureau
-          style:
-            top: 94%
-            left: 5%
+      - type: icon
+        icon: "mdi:clipboard-pulse"
+        entity: sensor.myenedis_14690738007698
+        style:
+          top: 29%
+          left: 40%
+          --iron-icon-stroke-color: black
+          --iron-icon-fill-color: rgba(255, 255, 0, .75)
+
+      - type: state-icon
+        entity: light.bureau_dimitri
+        tap_action:
+          action: toggle
+        style:
+          top: 78%
+          left: 19%
+
+      - type: state-icon
+        entity: switch.feu_tricolore
+        tap_action:
+          action: toggle
+        style:
+          top: 78%
+          left: 7%
+
+      - type: state-label
+        entity: sensor.bureau_temperature
+        style:
+          top: 64%
+          left: 20%
+      - type: state-label
+        entity: sensor.bureau_humidity
+        style:
+          top: 68%
+          left: 20%
+
+      - type: icon
+        icon: "mdi:printer-3d"
+        entity: switch.cr10s
+        style:
+          top: 94%
+          left: 10%
+
+      - type: icon
+        icon: "mdi:google-home"
+        entity: media_player.bureau
+        style:
+          top: 94%
+          left: 14%
+
+      - type: icon
+        icon: "mdi:server"
+        entity: media_player.bureau
+        style:
+          top: 94%
+          left: 5%
+
+  - type: grid
+    cards:
+      - type: thermostat
+        entity: climate.thermostat_central
+
+      - type: button
+        hold_action:
+          action: more-info
+        name: Ouvrir volet
+        icon: "mdi:window-shutter-open"
+        icon_height: "0.5"
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: call-service
+          service: automation.trigger
+          service_data:
+            entity_id: automation.ouvrir_volet
+
+      - type: button
+        hold_action:
+          action: more-info
+        name: Fermer volet
+        icon: "mdi:window-shutter"
+        icon_height: "0.5"
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: call-service
+          service: automation.trigger
+          service_data:
+            entity_id: automation.fermer_volet

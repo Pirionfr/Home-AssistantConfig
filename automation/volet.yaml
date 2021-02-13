@@ -1,21 +1,23 @@
 - alias: ouvrir volet
-  description: 'ouvrir volet'
+  description: "ouvrir volet"
   trigger:
-  - platform: sun
-    event: sunrise
+    - platform: sun
+      event: sunrise
+      offset: "-01:00:00"
   action:
-  - service: cover.open_cover
-    data: {}
-    entity_id: 
-    - group.volet
-    
+    - service: cover.open_cover
+      data: {}
+      entity_id:
+        - group.volet
+
 - alias: fermer volet
-  description: 'fermer volet'
+  description: "fermer volet"
   trigger:
-  - platform: sun
-    event: sunset
+    - platform: sun
+      event: sunset
+      offset: "00:30:00"
   action:
-  - service: cover.close_cover
-    data: {}
-    entity_id: 
-    - group.volet
+    - service: cover.close_cover
+      data: {}
+      entity_id:
+        - group.volet

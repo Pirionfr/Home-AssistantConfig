@@ -1,0 +1,7 @@
+- platform: myEnedis
+  token: !secret enedis_token
+  code: !secret enedis_code
+  heuresCreusesON: False
+  hp_cout: 0.1607
+  hc_cout: 0.1607
+  scan_interval: 3600

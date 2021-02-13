@@ -7,6 +7,8 @@ octoprint
 __pycache__
 
 
+
+
 *.pid
 *.xml
 *.csr
@@ -24,4 +26,5 @@ secrets.yaml
 known_devices.yaml
 
 /www/photo
-
+/www/font
+image
